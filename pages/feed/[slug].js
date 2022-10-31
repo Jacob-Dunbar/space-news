@@ -28,6 +28,17 @@ function feed({ pageNumber, articles }) {
         >
           previous page
         </div>
+        <p>{pageNumber}</p>
+        <div
+          onClick={() => {
+            if (pageNumber < 5) {
+              router.push(`/feed/${pageNumber + 1}`);
+            }
+          }}
+          className={pageNumber === 1 ? css.inactive : css.active}
+        >
+          next page
+        </div>
       </div>
     </div>
   );
