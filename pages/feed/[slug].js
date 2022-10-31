@@ -1,21 +1,23 @@
 import React from "react";
 import css from "../../css/feed.module.css";
 import { useRouter } from "next/router";
+import NewsItemCard from "../../components/NewsItemCard.js";
 
 function feed({ pageNumber, articles }) {
   const router = useRouter();
 
-  const headlines = articles.map((article, index) => (
-    <div key={index}>
-      <h1>{article.title}</h1>
-      <p>{article.description}</p>
-      {article.imageUrl && <img src={article.imageUrl} />}
-    </div>
+  const newsElements = articles.map((article, index) => (
+    <NewsItemCard
+      key={index}
+      title={article.title}
+      description={article.description}
+      image={article.imageUrl}
+    />
   ));
 
   return (
     <div>
-      {headlines}
+      {newsElements}
 
       <div className="paginator">
         <div
