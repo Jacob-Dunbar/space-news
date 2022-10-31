@@ -10,7 +10,7 @@ function Navbar() {
       </div>
       <div className={css.menu}>
         <Link href="/">Home</Link>
-        <Link href="/feed">Feed</Link>
+        <Link href="/feed/1">Feed</Link>
         <Link href="/whos_in_space">Who's in space RN</Link>
       </div>
     </nav>
