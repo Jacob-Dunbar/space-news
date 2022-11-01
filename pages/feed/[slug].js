@@ -6,6 +6,8 @@ import NewsItemCard from "../../components/NewsItemCard.js";
 function feed({ pageNumber, articles }) {
   const router = useRouter();
 
+  console.log(articles);
+
   const newsElements = articles.map((article, index) => (
     <NewsItemCard
       key={index}
