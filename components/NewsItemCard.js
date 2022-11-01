@@ -1,12 +1,19 @@
-import React from "react";
+import Link from "next/link";
 
-function NewsItemCard(props) {
-  console.log(props.imageUrl);
+function NewsItemCard({ article, pageNumber }) {
   return (
     <div>
-      <h1>{props.title}</h1>
-      <p>{props.description}</p>
-      <img src={props.image} />
+      <h1>{article.title}</h1>
+      <p>{article.description}</p>
+      <img src={article.imageUrl} />
+      <button>
+        <Link
+          href="/feed/[slug]/article/[id]"
+          as={`${pageNumber}/article/${article.articleId}`}
+        >
+          hello
+        </Link>
+      </button>
     </div>
   );
 }
