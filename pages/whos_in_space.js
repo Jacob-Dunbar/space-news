@@ -61,18 +61,18 @@ function whos_in_space(props) {
   }
 
   // real array
-  // const peopleInSpace = generateCrafts(props.people);
+  const peopleInSpace = generateCrafts(props.people);
 
   // dummy array with less people for testing
 
-  const peopleInSpace = [
-    {
-      craft: "iss",
-      name: ["sergey Prokopyev"],
-    },
-  ];
+  // const peopleInSpace = [
+  //   {
+  //     craft: "iss",
+  //     name: ["sergey Prokopyev"],
+  //   },
+  // ];
 
-  console.log(peopleInSpace);
+  // console.log(peopleInSpace);
   // Create component for each craft
   const peopleInSpaceElements = peopleInSpace.map((craft, index) => {
     return (
@@ -100,7 +100,3 @@ export const getServerSideProps = async () => {
     },
   };
 };
-
-//revise reduce method
-//create craft component
-//display craft name, and who is on board
