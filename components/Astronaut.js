@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import Details from "./Details.js";
 
 function Astronaut(props) {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   // fetch data for all astonauts on craft
   // should this be use effect or just get static or server side?
@@ -11,21 +13,18 @@ function Astronaut(props) {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://ll.thespacedevs.com/2.2.0/astronaut/?search=${props.astronaut}`
+      `https://lldev.thespacedevs.com/2.2.0/astronaut/?search=${props.astronaut}`
     )
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         setLoading(false);
       })
-      .then(console.log(data))
+
       .catch((error) => {
         throw error;
       });
   }, []);
-
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
 
   // function flagIcon(nationaly) {
   //   if (nationaly === "Russian") {
@@ -59,14 +58,12 @@ function Astronaut(props) {
 
   return (
     <div>
-      <img
-        // src={data.results[0].profile_image_thumbnail}
-        alt="profile picture"
-      />
-      <h3>
+      <h3 onClick={() => setShowDetails(!showDetails)}>
         {props.astronaut + ""}
-        {/* {flagIcon(nationality)} */}
       </h3>
+      {showDetails && data.count === 1 ? (
+        <Details astronaut={data} />
+      ) : undefined}
     </div>
 
     // DUMMY
