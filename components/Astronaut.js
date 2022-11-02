@@ -56,14 +56,23 @@ function Astronaut(props) {
   // set nationaly for astronaut to variable
   // const nationality = data.results[0].nationality;
 
+  function renderDetails() {
+    if (!showDetails) {
+      return;
+    } else if (showDetails && data.count === 1) {
+      return <Details astronaut={data} />;
+    } else {
+      return <p>Data unavaliable</p>;
+    }
+  }
+
+  console.log(showDetails);
   return (
     <div>
       <h3 onClick={() => setShowDetails(!showDetails)}>
         {props.astronaut + ""}
       </h3>
-      {showDetails && data.count === 1 ? (
-        <Details astronaut={data} />
-      ) : undefined}
+      {renderDetails()}
     </div>
 
     // DUMMY
