@@ -62,6 +62,7 @@ function whos_in_space(props) {
 
   const peopleInSpace = generateCrafts(props.people);
 
+  // Create component for each craft
   const peopleInSpaceElements = peopleInSpace.map((craft, index) => {
     return (
       <Craft key={index} craftName={craft.craft} peopleOnBoard={craft.name} />
