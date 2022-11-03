@@ -1,5 +1,4 @@
 import React from "react";
-import css from "../../../css/feed.module.css";
 
 import NewsItemCard from "../../../components/NewsItemCard.js";
 import Link from "next/link";
