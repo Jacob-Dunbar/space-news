@@ -5,7 +5,7 @@ import Footer from "../components/Footer.js";
 
 function Layout({ children }) {
   return (
-    <div>
+    <div className=" bg-slate-900">
       <Navbar />
       {children}
       <Footer />
