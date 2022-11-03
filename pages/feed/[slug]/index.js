@@ -51,7 +51,7 @@ export const getServerSideProps = async (pageContext) => {
   // Get page number so it can be used in the fetch request
   const pageNumber = pageContext.query.slug;
   const apiKey = process.env.PERIGON_API_KEY;
-  const url = `https://api.goperigon.com/v1/all?title=nasa OR spacex OR milky way&category=Science&sourceGroup=top100&showReprints=true&page=${pageNumber}&size=5&showNumResults=true&apiKey=${apiKey}`;
+  const url = `https://api.goperigon.com/v1/all?title=nasa OR spacex OR milky way OR galaxy&category=Science&sourceGroup=top100&showReprints=true&page=${pageNumber}&size=5&showNumResults=true&apiKey=${apiKey}`;
 
   const apiResponse = await fetch(url);
 
