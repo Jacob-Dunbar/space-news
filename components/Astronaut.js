@@ -26,41 +26,14 @@ function Astronaut(props) {
       });
   }, []);
 
-  // function flagIcon(nationaly) {
-  //   if (nationaly === "Russian") {
-  //     return <span className="fi fi-ru fis"></span>;
-  //   } else if (nationaly == "Chinese") {
-  //     return <span className="fi fi-cn fis"></span>;
-  //   } else if (nationaly == "American") {
-  //     return <span className="fi fi-us fis"></span>;
-  //   } else if (nationaly == "German") {
-  //     return <span className="fi fi-de fis"></span>;
-  //   } else if (nationaly == "Japanese") {
-  //     return <span className="fi fi-jp fis"></span>;
-  //   } else if (nationaly == "French") {
-  //     return <span className="fi fi-fr fis"></span>;
-  //   } else if (nationaly == "Canadian") {
-  //     return <span className="fi fi-ca fis"></span>;
-  //   } else if (nationaly == "Italian") {
-  //     return <span className="fi fi-it fis"></span>;
-  //   } else if (nationaly == "British") {
-  //     return <span className="fi fi-gb fis"></span>;
-  //   } else {
-  //     return;
-  //   }
-  // }
-
   // DUMMY PIC
   // const profilePic = "/astro.p"
-
-  // set nationaly for astronaut to variable
-  // const nationality = data.results[0].nationality;
 
   function renderDetails() {
     if (!showDetails) {
       return;
     } else if (showDetails && data.count === 1) {
-      return <Details astronaut={data} />;
+      return <Details astronaut={data} name={props.astronaut} />;
     } else {
       return <p>Data unavaliable</p>;
     }
@@ -69,9 +42,15 @@ function Astronaut(props) {
   console.log(showDetails);
   return (
     <div>
-      <h3 onClick={() => setShowDetails(!showDetails)}>
-        {props.astronaut + ""}
-      </h3>
+      <button
+        onFocus={() => setShowDetails(!showDetails)}
+        onBlur={() => setShowDetails(!showDetails)}
+        className="text-left "
+      >
+        <h3 className="py-3 font-light border-t w-44 text-slate-100">
+          {props.astronaut}
+        </h3>
+      </button>
       {renderDetails()}
     </div>
 

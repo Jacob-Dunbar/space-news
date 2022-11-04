@@ -13,6 +13,9 @@ module.exports = {
         9: "9",
         10: "10",
       },
+      fontFamily: {
+        body: ["Inter"],
+      },
     },
   },
   plugins: [require("@tailwindcss/line-clamp")],

@@ -80,7 +80,11 @@ function whos_in_space(props) {
     );
   });
 
-  return <div>{peopleInSpaceElements}</div>;
+  return (
+    <div className="flex justify-center h-screen pt-14 gap-72">
+      {peopleInSpaceElements}
+    </div>
+  );
 }
 
 export default whos_in_space;

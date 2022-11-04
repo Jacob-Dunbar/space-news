@@ -8,9 +8,13 @@ function Craft(props) {
   });
 
   return (
-    <div>
-      <h1>{props.craftName}</h1>
-      {astronautElements}
+    <div className="relative flex pt-2 pl-6 mb-4 border-l h-min w-max">
+      <div>
+        <h1 className="mb-3 text-4xl capitalize font-extralight text-slate-100">
+          {props.craftName === "iss" ? "ISS" : props.craftName}
+        </h1>
+        {astronautElements}
+      </div>
     </div>
   );
 }
