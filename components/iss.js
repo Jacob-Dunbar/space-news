@@ -9,7 +9,6 @@ title: ISS- International Space Station
 import React, { useRef, useState } from "react";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useSpring, a } from "@react-spring/three";
 
 export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/models/iss/scene.gltf");
@@ -18,19 +17,21 @@ export default function Model({ ...props }) {
   const [rotate, setRotate] = useState(true);
 
   useFrame(({ clock }) => {
-    const a = clock.getElapsedTime();
+    const a = clock.getElapsedTime() * 0.2;
+    const b = clock.getElapsedTime() * 0.1;
     Mod.current.rotation.y = a;
+    Mod.current.rotation.x = b;
   });
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <OrbitControls />
+      <OrbitControls enableZoom={false} enablePan={false} />
       <group rotation={[2, 0, 0]}>
-        <group rotation={[2, 0, 0]}>
-          <a.group
+        <group rotation={[8, 2, 2]}>
+          <group
             ref={Mod}
             scale={[30, 30, 30]}
-            rotation={[2, 0, 0]}
+            rotation={[2, 0, 6]}
             position={[0, 0.03, 0]}
           >
             <mesh
@@ -233,7 +234,7 @@ export default function Model({ ...props }) {
               geometry={nodes.iss_issins_split.geometry}
               material={materials.Material}
             />
-          </a.group>
+          </group>
         </group>
       </group>
     </group>
