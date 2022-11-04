@@ -27,17 +27,16 @@ function Astronaut(props) {
       });
   }, []);
 
-  // DUMMY PIC
-  // const profilePic = "/astro.p"
-
   function renderDetails() {
     if (!showDetails) {
       return;
     } else if (isLoading) {
       return (
-        <p className="absolute font-light top-4 text-slate-100 -right-32">
-          Loading ...
-        </p>
+        <img
+          className="absolute w-8 top-20 -right-40"
+          src="/loading.gif"
+          alt=""
+        />
       );
     } else if (showDetails && data.count === 1) {
       return <Details astronaut={data} name={props.astronaut} />;

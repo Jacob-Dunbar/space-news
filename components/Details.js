@@ -1,4 +1,5 @@
-import React from "react";
+import { HiOutlineChevronDoubleRight } from "react-icons/hi";
+import Link from "next/link";
 
 function Details(props) {
   console.log(props.astronaut);
@@ -33,24 +34,30 @@ function Details(props) {
   return (
     <div className="absolute top-0 flex flex-col pl-6 border-l -right-60 h-min">
       <div className="bg-red-500 h-fit">
-        <div className="absolute opacity-50 h-44 w-44 bg-gradient-to-br from-black to-transparent"></div>
+        <div className="absolute w-48 opacity-50 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
-          className=" w-44"
-          src={props.astronaut.results[0].profile_image_thumbnail}
+          className="w-48 "
+          src={props.astronaut.results[0].profile_image}
           alt=""
         />
       </div>
 
-      <div className="w-44">
-        <h1 className="py-3 text-lg font-light text-slate-100 w-44">
+      <div className="w-48">
+        <h1 className="w-48 py-3 text-lg font-light text-slate-100">
           {props.name}
           {flagIcon(nationality)}
         </h1>
         <span className=""></span>
       </div>
-      <p className="pt-4 text-xs font-light border-t w-44 indent-4 line-clamp-8 text-slate-100">
+      <p className="w-48 pt-4 text-xs font-light leading-5 border-t indent-4 line-clamp-8 text-slate-100">
         {props.astronaut.results[0].bio}
       </p>
+      <Link
+        href={props.astronaut.results[0].wiki}
+        className="flex items-center gap-2 mt-3 text-left text-slate-100"
+      >
+        Learn More <HiOutlineChevronDoubleRight />
+      </Link>
       <div className="h-7 "></div>
     </div>
   );
