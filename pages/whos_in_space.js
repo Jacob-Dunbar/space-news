@@ -1,4 +1,4 @@
-import React from "react";
+import CraftCanvas from "../components/CraftCanvas.js";
 import Craft from "../components/Craft.js";
 
 function whos_in_space(props) {
@@ -82,7 +82,8 @@ function whos_in_space(props) {
 
   return (
     <div className="flex justify-center h-screen pt-14 gap-72">
-      {peopleInSpaceElements}
+      {/* {peopleInSpaceElements} */}
+      <CraftCanvas />
     </div>
   );
 }
