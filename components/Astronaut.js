@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Details from "./Details.js";
+import DetailsReject from "./DetailsReject.js";
 
 function Astronaut(props) {
   const [data, setData] = useState(null);
@@ -35,7 +36,7 @@ function Astronaut(props) {
     } else if (showDetails && data.count === 1) {
       return <Details astronaut={data} name={props.astronaut} />;
     } else {
-      return <p>Data unavaliable</p>;
+      return <DetailsReject name={props.astronaut} />;
     }
   }
 

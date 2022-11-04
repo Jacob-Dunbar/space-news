@@ -10,30 +10,25 @@ function feed({ pageNumber, articles }) {
   ));
 
   return (
-    <div>
-      {newsElements}
+    <div className="flex flex-col items-center justify-center w-full">
+      <div className="grid gap-12 mx-auto mt-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
+        {newsElements}
+      </div>
 
-      <div className="paginator">
+      <div className="flex gap-10 mt-11">
         <Link
+          className=" text-slate-100"
           href={
             pageNumber > 1 ? `/feed/${pageNumber - 1}` : `/feed/${pageNumber}`
           }
         >
           previous page
         </Link>
-        {/* <div
-          onClick={() => {
-            if (pageNumber > 1) {
-              router.push(`/feed/${pageNumber - 1}`);
-            }
-          }}
-          className={pageNumber === 1 ? css.inactive : css.active}
-        >
-          previous page
-        </div> */}
-        <p>{pageNumber}</p>
+
+        <p className=" text-slate-100">{pageNumber}</p>
 
         <Link
+          className=" text-slate-100"
           href={
             pageNumber < 5 ? `/feed/${pageNumber + 1}` : `/feed/${pageNumber}`
           }
@@ -50,7 +45,7 @@ export const getServerSideProps = async (pageContext) => {
   // Get page number so it can be used in the fetch request
   const pageNumber = pageContext.query.slug;
   const apiKey = process.env.PERIGON_API_KEY;
-  const url = `https://api.goperigon.com/v1/all?title=nasa OR spacex OR milky way OR galaxy&category=Science&sourceGroup=top100&showReprints=true&page=${pageNumber}&size=5&showNumResults=true&apiKey=${apiKey}`;
+  const url = `https://api.goperigon.com/v1/all?title=nasa OR spacex OR milky way OR galaxy&category=Science&sourceGroup=top100&showReprints=true&page=${pageNumber}&size=6&showNumResults=true&apiKey=${apiKey}`;
 
   const apiResponse = await fetch(url);
 
