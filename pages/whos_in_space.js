@@ -1,7 +1,13 @@
 import CraftCanvas from "../components/CraftCanvas.js";
 import Craft from "../components/Craft.js";
+import { useState, Suspense, useEffect } from "react";
+import CraftList from "../components/CraftList";
+import { Canvas } from "@react-three/fiber";
+import Iss from "../components/Iss.js";
 
 function whos_in_space(props) {
+  const [currentCraft, setCurrentCraft] = useState("");
+
   //take array of people objects and generate array of craft objects
   function generateCrafts(people) {
     // empty array for people not in ISS or Tiangong
@@ -63,27 +69,48 @@ function whos_in_space(props) {
   // real array
   const peopleInSpace = generateCrafts(props.people);
 
-  // dummy array with less people for testing
+  //Change current craft function
 
-  // const peopleInSpace = [
-  //   {
-  //     craft: "iss",
-  //     name: ["sergey Prokopyev"],
-  //   },
-  // ];
+  function changeCurrentCraft(newCraft) {
+    setCurrentCraft(newCraft);
+  }
 
-  // console.log(peopleInSpace);
-  // Create component for each craft
-  const peopleInSpaceElements = peopleInSpace.map((craft, index) => {
-    return (
-      <Craft key={index} craftName={craft.craft} peopleOnBoard={craft.name} />
-    );
-  });
+  console.log(currentCraft);
+
+  // Chose model to render
+
+  function choseModel() {
+    if (currentCraft === "iss") {
+      return <Iss />;
+    } else {
+      return;
+    }
+  }
 
   return (
-    <div className="flex justify-center h-screen pt-14 gap-72">
+    <div className="flex justify-center h-screen gap-6 pt-14">
+      <div className=" h-96 w-96">
+        <Canvas>
+          <Suspense fallback={null}>
+            {/* <ambientLight intensity={0.4} /> */}
+            <spotLight
+              intensity={0.7}
+              angle={0.7}
+              penumbra={1}
+              position={[10, 80, 200]}
+              color={"#FFFFFF"}
+            />
+            {choseModel()}
+          </Suspense>
+        </Canvas>
+      </div>
       {/* {peopleInSpaceElements} */}
-      <CraftCanvas />
+      <CraftList
+        peopleInSpace={peopleInSpace}
+        changeCurrentCraft={changeCurrentCraft}
+        currentCraft={currentCraft}
+      />
+      <div className="h-48 w-96"></div>
     </div>
   );
 }
