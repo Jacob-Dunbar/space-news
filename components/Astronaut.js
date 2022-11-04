@@ -33,6 +33,12 @@ function Astronaut(props) {
   function renderDetails() {
     if (!showDetails) {
       return;
+    } else if (isLoading) {
+      return (
+        <p className="absolute font-light top-4 text-slate-100 -right-32">
+          Loading ...
+        </p>
+      );
     } else if (showDetails && data.count === 1) {
       return <Details astronaut={data} name={props.astronaut} />;
     } else {
@@ -54,16 +60,6 @@ function Astronaut(props) {
       </button>
       {renderDetails()}
     </div>
-
-    // DUMMY
-
-    // <div>
-    //   <img src="/astro.jpeg" alt="profile picture" />
-    //   <h3>
-    //     {"props.astronaut" + ""}
-    //     {flagIcon("Russian")}
-    //   </h3>
-    // </div>
   );
 }
 
