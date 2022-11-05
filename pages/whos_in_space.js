@@ -4,6 +4,7 @@ import { useState, Suspense, useEffect } from "react";
 import CraftList from "../components/CraftList";
 import { Canvas } from "@react-three/fiber";
 import Iss from "../components/Iss.js";
+import Tiangong from "../components/Tiangong.js";
 
 function whos_in_space(props) {
   const [currentCraft, setCurrentCraft] = useState("");
@@ -77,40 +78,48 @@ function whos_in_space(props) {
 
   console.log(currentCraft);
 
-  // Chose model to render
+  // Chose model to render Iss / Tiangong / misc craft
 
   function choseModel() {
     if (currentCraft === "iss") {
       return <Iss />;
+    } else if (currentCraft === "tiangong") {
+      return <Tiangong />;
     } else {
       return;
     }
   }
 
   return (
-    <div className="flex justify-center h-screen gap-6 pt-14">
-      <div className=" h-96 w-96">
+    <div className="flex justify-end gap-6 grow">
+      <div className="absolute w-full h-5/6">
         <Canvas>
           <Suspense fallback={null}>
-            {/* <ambientLight intensity={0.4} /> */}
-            <spotLight
+            {/* <spotLight
               intensity={0.7}
               angle={0.7}
               penumbra={1}
               position={[10, 80, 200]}
               color={"#FFFFFF"}
+            /> */}
+            <pointLight
+              distance={20}
+              decay={2}
+              intensity={4}
+              color={"#fffff"}
+              position={[0, 0, 1]}
             />
             {choseModel()}
           </Suspense>
         </Canvas>
       </div>
-      {/* {peopleInSpaceElements} */}
-      <CraftList
-        peopleInSpace={peopleInSpace}
-        changeCurrentCraft={changeCurrentCraft}
-        currentCraft={currentCraft}
-      />
-      <div className="h-48 w-96"></div>
+      <div className="w-1/2 h-full ">
+        <CraftList
+          peopleInSpace={peopleInSpace}
+          changeCurrentCraft={changeCurrentCraft}
+          currentCraft={currentCraft}
+        />
+      </div>
     </div>
   );
 }
