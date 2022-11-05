@@ -113,7 +113,7 @@ function whos_in_space(props) {
           </Suspense>
         </Canvas>
       </div>
-      <div className="w-1/2 h-full ">
+      <div className="w-7/12 h-full ">
         <CraftList
           peopleInSpace={peopleInSpace}
           changeCurrentCraft={changeCurrentCraft}
