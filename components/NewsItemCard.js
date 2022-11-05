@@ -2,6 +2,14 @@ import Link from "next/link";
 
 function NewsItemCard({ article, pageNumber }) {
   console.log(article);
+
+  const options = {
+    month: "numeric",
+    day: "numeric",
+  };
+
+  const date = new Date(article.addDate).toLocaleDateString("en-GB", options);
+
   return (
     <div className="pl-4 border-l">
       <div className="h-56 w-80">
@@ -29,7 +37,7 @@ function NewsItemCard({ article, pageNumber }) {
 
         <div className="flex flex-col w-1/2 h-full gap-4 pl-4">
           <h1 className="text-3xl font-thin tracking-wider text-slate-100">
-            09/22
+            {date}
           </h1>
 
           <p className="pt-4 text-sm font-thin border-t indent-6 line-clamp-7 text-slate-300">
