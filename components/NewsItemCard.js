@@ -5,7 +5,10 @@ function NewsItemCard({ article, pageNumber }) {
   return (
     <div className="pl-4 border-l">
       <div className="h-56 w-80">
-        <div className="absolute h-56 w-80 bg-gradient-to-t from-slate-900 to-transparent"></div>
+        <div className="absolute h-56 w-80 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        <div className="absolute h-56 w-80 bg-gradient-to-b from-black via-transparent to-transparent"></div>
+        <div className="absolute h-56 w-80 bg-gradient-to-l from-black via-transparent to-transparent"></div>
+        <div className="absolute h-56 w-80 bg-gradient-to-r from-black via-transparent to-transparent"></div>
         <img className="h-56 w-80" src={article.imageUrl} />
       </div>
       <div className="flex items-center h-56 pt-3 w-80">

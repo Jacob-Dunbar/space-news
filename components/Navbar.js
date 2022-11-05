@@ -4,19 +4,28 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <nav className="bg-gray-600 w-screen flex justify-between h-12 items-center w-100% px-5">
+    <nav className=" w-full flex justify-between h-16 items-center w-100% px-5">
       <div>
         <h1 className="">Space News</h1>
       </div>
-      <div className="flex gap-4">
-        <Link className="cursor-pointer " href="/">
+      <div className="flex">
+        <Link
+          className="px-3 text-xs font-bold tracking-widest uppercase cursor-pointer text-slate-300"
+          href="/"
+        >
           Home
         </Link>
-        <Link className="cursor-pointer " href="/feed/1">
-          Feed
+        <Link
+          className="px-3 text-xs font-bold tracking-widest uppercase cursor-pointer border-x text-slate-300"
+          href="/feed/1"
+        >
+          News feed
         </Link>
-        <Link className="cursor-pointer " href="/whos_in_space">
-          Who's in space RN
+        <Link
+          className="px-3 text-xs font-bold tracking-widest uppercase cursor-pointer text-slate-300"
+          href="/whos_in_space"
+        >
+          In space now
         </Link>
       </div>
     </nav>
