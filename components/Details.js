@@ -32,11 +32,11 @@ function Details(props) {
   const nationality = props.astronaut.results[0].nationality;
 
   return (
-    <div className="absolute top-0 flex flex-col pl-6 border-l -right-60 h-min">
+    <div className="absolute top-0 flex flex-col pl-6 border-l mt-14 -right-60 h-min">
       <div className="bg-red-500 h-fit">
         <div className="absolute w-48 opacity-50 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
-          className="w-48 "
+          className="object-cover object-top w-48 max-h-60"
           src={props.astronaut.results[0].profile_image}
           alt=""
         />
@@ -49,7 +49,7 @@ function Details(props) {
         </h1>
         <span className=""></span>
       </div>
-      <p className="w-48 pt-4 text-xs font-light leading-5 border-t indent-4 line-clamp-8 text-slate-100">
+      <p className="w-48 pt-4 text-xs font-light leading-5 border-t indent-4 line-clamp-6 text-slate-100">
         {props.astronaut.results[0].bio}
       </p>
       <Link
@@ -58,7 +58,7 @@ function Details(props) {
       >
         Learn More <HiOutlineChevronDoubleRight />
       </Link>
-      <div className="h-7 "></div>
+      <div className="h-4 "></div>
     </div>
   );
 }

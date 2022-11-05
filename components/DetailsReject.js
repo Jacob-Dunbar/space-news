@@ -2,7 +2,7 @@ import React from "react";
 
 function DetailsReject(props) {
   return (
-    <div className="absolute top-0 flex flex-col pl-6 border-l -right-60 h-min">
+    <div className="absolute top-0 flex flex-col pl-6 border-l mt-14 -right-60 h-min">
       <div className="bg-red-500 h-fit"></div>
 
       <div className="w-44">
