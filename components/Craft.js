@@ -24,7 +24,7 @@ function Craft(props) {
     <div
       onClick={() => props.changeCurrentCraft(props.craftName)}
       onBlur={handleBlur}
-      className="relative flex pt-2 pl-6 mb-4 border-l h-min w-max"
+      className="relative flex pt-2 pl-6 border-l w-max"
     >
       <div>
         <button className="mb-3 text-4xl text-left capitalize w-44 font-extralight text-slate-100">

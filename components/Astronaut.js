@@ -51,7 +51,7 @@ function Astronaut(props) {
       <button
         onFocus={() => setShowDetails(!showDetails)}
         onBlur={() => setShowDetails(!showDetails)}
-        className="text-left "
+        className="pl-8 text-left"
       >
         <h3 className="py-3 font-light border-t w-44 text-slate-100">
           {props.astronaut}
