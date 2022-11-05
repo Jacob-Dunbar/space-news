@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <nav className="bg-gray-600 flex justify-between h-12 items-center w-100% px-5">
+    <nav className="bg-gray-600 w-screen flex justify-between h-12 items-center w-100% px-5">
       <div>
         <h1 className="">Space News</h1>
       </div>
