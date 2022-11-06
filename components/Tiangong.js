@@ -9,7 +9,7 @@ export default function Model({ ...props }) {
 
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() * 0.1;
-    const b = clock.getElapsedTime() * 0.04;
+    const b = clock.getElapsedTime() * 0.04 + 2.9;
     // Mod.current.rotation.y = a;
     Mod.current.rotation.x = b;
   });
@@ -19,10 +19,10 @@ export default function Model({ ...props }) {
       <OrbitControls enableZoom={false} enablePan={false} />
       <group
         scale={[0.07, 0.07, 0.07]}
-        rotation={[2, 6.5, 0]}
-        position={[-3, 0, 0]}
+        rotation={[1.7, 8.8, 0]}
+        position={[-3.8, 0, 0]}
       >
-        <group ref={Mod} rotation={[Math.PI / 2, 0, 0]}>
+        <group ref={Mod} rotation={[Math.PI / 2.9, 0, 0]}>
           <group position={[57.97, 31.02, 61.66]} rotation={[2, 0, 6]} />
           <group position={[20, 0, 0]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
             <mesh
