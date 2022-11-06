@@ -1,4 +1,5 @@
-import React from "react";
+import Link from "next/link";
+import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 function DetailsReject(props) {
   return (
@@ -11,8 +12,17 @@ function DetailsReject(props) {
         </h1>
 
         <p className="pt-4 text-sm font-light border-t w-44 indent-4 line-clamp-8 text-slate-100">
-          No data available for this Astronaut
+          There is currently no data available for this astronaut.
         </p>
+
+        <Link
+          className="flex items-center gap-3 mt-3 text-left text-slate-100 group hover:text-orange-400"
+          target="_blank"
+          href={`https://en.wikipedia.org/wiki/${props.name}`}
+        >
+          Try Wikipedia{" "}
+          <HiOutlineChevronDoubleRight className=" group-hover:animate-bounceLeft" />
+        </Link>
       </div>
       <div className="h-7 "></div>
     </div>

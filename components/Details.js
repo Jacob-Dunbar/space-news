@@ -49,17 +49,18 @@ function Details(props) {
         </h1>
         <span className=""></span>
       </div>
-      <p className="w-48 pt-4 text-xs font-light leading-5 border-t indent-4 line-clamp-6 text-slate-100">
+      <p className="w-48 pt-4 text-xs font-light leading-5 border-t indent-4 line-clamp-5 text-slate-100">
         {props.astronaut.results[0].bio}
       </p>
       <Link
         target="_blank"
         href={props.astronaut.results[0].wiki}
-        className="flex items-center gap-2 mt-3 text-left text-slate-100"
+        className="flex items-center gap-3 mt-3 text-left text-slate-100 group hover:text-orange-400"
       >
-        Learn More
+        Learn More{" "}
+        <HiOutlineChevronDoubleRight className=" group-hover:animate-bounceLeft" />
       </Link>
-      <div className="h-4 "></div>
+      <div className="h-2 "></div>
     </div>
   );
 }
