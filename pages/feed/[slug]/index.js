@@ -10,8 +10,10 @@ function feed({ pageNumber, articles }) {
   ));
 
   return (
-    <div className="relative flex flex-col items-center justify-start w-full gap-8 pt-12 ">
-      <h1 className="text-4xl text-slate-200">News Feed</h1>
+    <div className="relative flex flex-col items-center justify-start w-full gap-8 pt-8 ">
+      <h1 className="w-1/2 text-base tracking-wider text-slate-200">
+        Most recent space news:
+      </h1>
       {newsElements}
 
       <div className="flex items-center gap-10 mb-11">
