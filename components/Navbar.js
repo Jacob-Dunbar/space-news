@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className=" w-full flex justify-between h-16 items-center w-100% px-5">
       <div>
-        <h1 className="">Space News</h1>
+        <h1 className="text-xl uppercase text-slate-200">Space News</h1>
       </div>
       <div className="flex">
         <Link
