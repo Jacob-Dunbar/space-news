@@ -19,6 +19,19 @@ module.exports = {
       scale: {
         102: "1.02",
       },
+      animation: {
+        bounceLeft: "bounceLeft 1s ease infinite",
+      },
+      keyframes: {
+        bounceLeft: {
+          "0%, 100%": {
+            transform: "translateX(-25%)",
+          },
+          "50%": {
+            transform: "translateX(0)",
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/line-clamp")],

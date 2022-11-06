@@ -27,7 +27,13 @@ function Craft(props) {
       className="relative flex pt-2 pl-6 border-l w-max"
     >
       <div>
-        <button className="mb-3 text-4xl text-left capitalize w-44 font-extralight text-slate-100">
+        <button
+          className={`mb-3 text-4xl text-left capitalize w-44 font-extralight text-slate-100 ${
+            props.currentCraft === props.craftName
+              ? "text-orange-400"
+              : "text-slate-200"
+          }`}
+        >
           {props.craftName === "iss" ? "ISS" : props.craftName}
         </button>
         {props.currentCraft === props.craftName ? (

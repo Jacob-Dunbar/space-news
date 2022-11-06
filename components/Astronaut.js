@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Details from "./Details.js";
 import DetailsReject from "./DetailsReject.js";
+import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 function Astronaut(props) {
   const [data, setData] = useState(null);
@@ -53,9 +54,10 @@ function Astronaut(props) {
         onBlur={() => setShowDetails(!showDetails)}
         className="pl-8 text-left"
       >
-        <h3 className="py-3 font-light border-t w-44 text-slate-100">
+        <button className="flex items-center justify-between py-3 font-light text-left border-t group focus:text-orange-400 w-44 text-slate-100">
           {props.astronaut}
-        </h3>
+          <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
+        </button>
       </button>
       {renderDetails()}
     </div>
