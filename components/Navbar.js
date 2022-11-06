@@ -1,8 +1,7 @@
-import React from "react";
-
 import Link from "next/link";
 
-function Navbar() {
+function Navbar(props) {
+  console.log(props.page);
   return (
     <nav className=" w-full flex justify-between h-16 items-center w-100% px-5">
       <div>
@@ -14,20 +13,29 @@ function Navbar() {
       </div>
       <div className="flex">
         <Link
-          className="px-3 text-xs font-bold tracking-widest uppercase cursor-pointer text-slate-300"
+          onClick={() => props.changePage("home")}
+          className={`px-3 text-xs font-bold tracking-widest uppercase cursor-pointer ${
+            props.page === "home" ? "text-orange-400" : "text-slate-300"
+          } `}
           href="/"
         >
           Home
         </Link>
         <Link
-          className="px-3 text-xs font-bold tracking-widest uppercase cursor-pointer border-x text-slate-300"
+          onClick={() => props.changePage("feed")}
+          className={`px-3 text-xs font-bold tracking-widest uppercase cursor-pointer border-x ${
+            props.page === "feed" ? "text-orange-400" : "text-slate-300"
+          }`}
           href="/feed/1"
         >
           News feed
         </Link>
         <Link
-          className="px-3 text-xs font-bold tracking-widest uppercase cursor-pointer text-slate-300"
-          href="/whos_in_space"
+          onClick={() => props.changePage("isn")}
+          className={`px-3 text-xs font-bold tracking-widest uppercase cursor-pointer ${
+            props.page === "isn" ? "text-orange-400" : "text-slate-300"
+          }`}
+          href="/in-space-now"
         >
           In space now
         </Link>
