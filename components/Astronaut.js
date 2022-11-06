@@ -46,19 +46,26 @@ function Astronaut(props) {
     }
   }
 
+  function handleBlur(e) {
+    // if the blur was because of outside focus
+    // currentTarget is the parent element, relatedTarget is the clicked element
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setShowDetails(false);
+    }
+  }
+
   console.log(showDetails);
   return (
-    <div>
-      <button
-        onFocus={() => setShowDetails(!showDetails)}
-        onBlur={() => setShowDetails(!showDetails)}
-        className="pl-8 text-left"
-      >
-        <button className="flex items-center justify-between py-3 font-light text-left border-t group focus:text-orange-400 w-44 text-slate-100">
-          {props.astronaut}
-          <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
-        </button>
+    <div
+      className="pl-8 text-left"
+      onClick={() => setShowDetails(true)}
+      onBlur={handleBlur}
+    >
+      <button className="flex items-center justify-between py-3 font-light text-left border-t group focus:text-orange-400 w-44 text-slate-100">
+        {props.astronaut}
+        <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
       </button>
+
       {renderDetails()}
     </div>
   );

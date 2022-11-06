@@ -53,14 +53,17 @@ function Details(props) {
         {props.astronaut.results[0].bio}
       </p>
       <Link
+        target="_blank"
         href={props.astronaut.results[0].wiki}
         className="flex items-center gap-2 mt-3 text-left text-slate-100"
       >
-        Learn More <HiOutlineChevronDoubleRight />
+        Learn More
       </Link>
       <div className="h-4 "></div>
     </div>
   );
 }
-
+{
+  /* <HiOutlineChevronDoubleRight /> */
+}
 export default Details;
