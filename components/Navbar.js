@@ -6,7 +6,11 @@ function Navbar() {
   return (
     <nav className=" w-full flex justify-between h-16 items-center w-100% px-5">
       <div>
-        <h1 className="text-xl uppercase text-slate-200">Space News</h1>
+        <img
+          className="w-40 pt-2 pl-3"
+          src="/space-news-logo.svg"
+          alt="space news logo"
+        />
       </div>
       <div className="flex">
         <Link
