@@ -15,36 +15,43 @@ function NewsItemCard({ article, pageNumber }) {
   //chose summary
 
   return (
-    <div className="relative flex flex-col items-center justify-start w-1/2 px-8 py-4 h-96">
-      {/* image */}
-      <div className="absolute top-0 w-full h-96 ">
-        <div className="absolute w-full opacity-100 h-96 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-        <div className="absolute w-full opacity-90 h-96 bg-gradient-to-b from-black via-transparent to-transparent"></div>
-        <div className="absolute w-full opacity-90 h-96 bg-gradient-to-l from-black via-transparent to-transparent"></div>
-        <div className="absolute w-full opacity-90 h-96 bg-gradient-to-r from-black via-transparent to-transparent"></div>
-        <img className="w-full h-96 " src={article.imageUrl} />
-      </div>
-      {/* content */}
-      <div className="z-10 flex flex-col items-start justify-between w-full pb-2 h-96">
-        {/* title */}
-        <h1 className="py-2 pl-4 text-lg font-light leading-6 tracking-wide border-l text-slate-200">
-          {article.title}
-        </h1>
-        {/* info */}
-        <div className="flex flex-col justify-start w-4/5 py-2 pl-5 border-l">
-          {/* date */}
-          <h1 className="px-3 pb-2 text-lg font-thin tracking-wider border-b w-min text-slate-100">
-            {date}
-          </h1>
-          {/* summary */}
-          <p className="pt-3 text-xs font-thin indent-6 line-clamp-3 text-slate-300">
-            {article.summary === "" ? article.description : article.summary}
-          </p>
-          <p className="flex items-center gap-1 pt-2 text-xs font-bold text-slate-200">
-            Read on <HiOutlineChevronDoubleRight />
-          </p>
+    <div className="flex flex-col items-center justify-center">
+      <Link
+        className="relative flex flex-col items-center justify-start w-1/2 px-8 py-4 pb-6 transition-all group hover:scale-102 h-1/2"
+        href="/feed/[slug]/article/[id]"
+        as={`${pageNumber}/article/${article.articleId}`}
+      >
+        {/* image */}
+        <div className="absolute top-0 w-full h-full ">
+          <div className="absolute w-full h-full opacity-100 group-hover:opacity-90 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <div className="absolute w-full h-full opacity-90 group-hover:opacity-80 bg-gradient-to-b from-black via-transparent to-transparent"></div>
+          <div className="absolute w-full h-full opacity-90 group-hover:opacity-80 bg-gradient-to-l from-black via-transparent to-transparent"></div>
+          <div className="absolute w-full h-full opacity-90 group-hover:opacity-80 bg-gradient-to-r from-black via-transparent to-transparent"></div>
+          <img className="w-full h-full" src={article.imageUrl} />
         </div>
-      </div>
+        {/* content */}
+        <div className="z-10 flex flex-col items-start justify-between w-full pb-2 h-96">
+          {/* title */}
+          <h1 className="py-2 pl-4 text-lg font-light leading-6 tracking-wide border-l text-slate-200">
+            {article.title}
+          </h1>
+          {/* info */}
+          <div className="flex flex-col justify-start w-4/5 py-2 pl-5 border-l">
+            {/* date */}
+            <h1 className="pb-2 pr-3 text-lg font-thin tracking-wider border-b w-min text-slate-100">
+              {date}
+            </h1>
+            {/* summary */}
+            <p className="pt-3 text-xs font-thin indent-6 line-clamp-3 text-slate-300">
+              {article.summary === "" ? article.description : article.summary}
+            </p>
+            <p className="flex items-center gap-1 pt-2 text-xs font-bold text-slate-200">
+              Read on <HiOutlineChevronDoubleRight />
+            </p>
+          </div>
+        </div>
+      </Link>
+      <div className="w-1/2 h-1 pb-8 border-b "></div>
     </div>
   );
 }

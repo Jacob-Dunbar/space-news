@@ -1,5 +1,5 @@
-import React from "react";
-
+import { HiOutlineChevronDoubleRight } from "react-icons/hi";
+import { HiOutlineChevronDoubleLeft } from "react-icons/hi";
 import NewsItemCard from "../../../components/NewsItemCard.js";
 import Link from "next/link";
 
@@ -10,18 +10,18 @@ function feed({ pageNumber, articles }) {
   ));
 
   return (
-    <div className="relative flex flex-col items-center justify-start w-full gap-5 ">
+    <div className="relative flex flex-col items-center justify-start w-full gap-8 pt-12 ">
       <h1 className="text-4xl text-slate-200">News Feed</h1>
       {newsElements}
 
-      <div className="flex gap-10 mt-11">
+      <div className="flex items-center gap-10 mb-11">
         <Link
           className=" text-slate-100"
           href={
             pageNumber > 1 ? `/feed/${pageNumber - 1}` : `/feed/${pageNumber}`
           }
         >
-          previous page
+          <HiOutlineChevronDoubleLeft />
         </Link>
 
         <p className=" text-slate-100">{pageNumber}</p>
@@ -32,7 +32,7 @@ function feed({ pageNumber, articles }) {
             pageNumber < 5 ? `/feed/${pageNumber + 1}` : `/feed/${pageNumber}`
           }
         >
-          Next page
+          <HiOutlineChevronDoubleRight />
         </Link>
       </div>
     </div>
