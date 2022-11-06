@@ -10,10 +10,9 @@ function feed({ pageNumber, articles }) {
   ));
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="grid gap-12 mt-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
-        {newsElements}
-      </div>
+    <div className="relative flex flex-col items-center justify-start w-full gap-5 ">
+      <h1 className="text-4xl text-slate-200">News Feed</h1>
+      {newsElements}
 
       <div className="flex gap-10 mt-11">
         <Link
@@ -45,7 +44,7 @@ export const getServerSideProps = async (pageContext) => {
   // Get page number so it can be used in the fetch request
   const pageNumber = pageContext.query.slug;
   const apiKey = process.env.PERIGON_API_KEY;
-  const url = `https://api.goperigon.com/v1/all?title=nasa OR spacex OR milky way OR galaxy&category=Science&sourceGroup=top100&showReprints=true&page=${pageNumber}&size=6&showNumResults=true&apiKey=${apiKey}`;
+  const url = `https://api.goperigon.com/v1/all?title=nasa OR spacex OR milky way OR galaxy&category=Science&sourceGroup=top100&showReprints=true&page=${pageNumber}&size=5&showNumResults=true&apiKey=${apiKey}`;
 
   const apiResponse = await fetch(url);
 
