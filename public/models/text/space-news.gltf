@@ -15,18 +15,18 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Curve.003",
+            "name" : "Curve",
             "scale" : [
-                514.5616455078125,
-                514.5616455078125,
-                514.5616455078125
+                80.34811401367188,
+                80.34811401367188,
+                80.34811401367188
             ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "SVGMat.002",
+            "name" : "SVGMat",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     1,
@@ -41,7 +41,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Curve.019",
+            "name" : "Curve",
             "primitives" : [
                 {
                     "attributes" : {
@@ -59,67 +59,67 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 27180,
+            "count" : 24436,
             "max" : [
-                0.037061985582113266,
-                0.000699999975040555,
-                0.006100126076489687
+                0.039761222898960114,
+                0.0005000000237487257,
+                0.004013280384242535
             ],
             "min" : [
-                -0.037105292081832886,
-                -0.000699999975040555,
-                -0.00590050732716918
+                -0.03965883329510689,
+                -0.0005000000237487257,
+                -0.004543469753116369
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 27180,
+            "count" : 24436,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 27180,
+            "count" : 24436,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 48936,
+            "count" : 43764,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 326160,
+            "byteLength" : 293232,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 326160,
-            "byteOffset" : 326160,
+            "byteLength" : 293232,
+            "byteOffset" : 293232,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 217440,
-            "byteOffset" : 652320,
+            "byteLength" : 195488,
+            "byteOffset" : 586464,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 97872,
-            "byteOffset" : 869760,
+            "byteLength" : 87528,
+            "byteOffset" : 781952,
             "target" : 34963
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 967632,
+            "byteLength" : 869480,
             "uri" : "space-news.bin"
         }
     ]
