@@ -2,7 +2,6 @@ import React from "react";
 import Craft from "../components/Craft";
 
 function CraftList(props) {
-  console.log(props.peopleInSpace);
   const peopleInSpaceElements = props.peopleInSpace.map((craft, index) => {
     return (
       <Craft
@@ -15,7 +14,7 @@ function CraftList(props) {
     );
   });
 
-  return <div className="mt-10 ">{peopleInSpaceElements}</div>;
+  return <div className="mt-8 ">{peopleInSpaceElements}</div>;
 }
 
 export default CraftList;
