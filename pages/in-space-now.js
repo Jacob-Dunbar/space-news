@@ -89,7 +89,7 @@ function whos_in_space(props) {
   }
 
   return (
-    <div className="flex justify-end gap-6 grow">
+    <div className="flex justify-end gap-6 pt-8 grow">
       <div className="absolute w-full h-5/6">
         <Canvas>
           <Suspense fallback={null}>
@@ -104,14 +104,14 @@ function whos_in_space(props) {
               distance={20}
               decay={2}
               intensity={4}
-              color={"#fffff"}
+              color={"white"}
               position={[0, 0, 1]}
             />
             {choseModel()}
           </Suspense>
         </Canvas>
       </div>
-      <h1 className="tracking-wider  text-slate-200">
+      <h1 className="text-base tracking-wider text-slate-200">
         Currently manned craft in space:
       </h1>
       <div className="w-7/12 h-full ">
