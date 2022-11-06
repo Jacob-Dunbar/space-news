@@ -15,7 +15,7 @@ function NewsItemCard({ article, pageNumber }) {
   //chose summary
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center ">
       <Link
         className="relative flex flex-col items-center justify-start w-1/2 px-8 py-4 pb-6 transition-all group hover:scale-102 h-1/2"
         href="/feed/[slug]/article/[id]"
@@ -45,8 +45,9 @@ function NewsItemCard({ article, pageNumber }) {
             <p className="pt-3 text-xs font-thin indent-6 line-clamp-3 text-slate-300">
               {article.summary === "" ? article.description : article.summary}
             </p>
-            <p className="flex items-center gap-1 pt-2 text-xs font-bold text-slate-200">
-              Read on <HiOutlineChevronDoubleRight />
+            <p className="flex items-center gap-3 mt-3 text-left text-slate-100 group group-hover:text-orange-400">
+              Read on
+              <HiOutlineChevronDoubleRight className=" group-hover:animate-bounceLeft" />
             </p>
           </div>
         </div>
