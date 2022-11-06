@@ -33,7 +33,7 @@ function Details(props) {
 
   return (
     <div className="absolute top-0 flex flex-col pl-8 border-l mt-14 -right-64 h-min">
-      <div className="bg-red-500 h-fit">
+      <div className=" h-fit">
         <div className="absolute w-48 opacity-50 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
           className="object-cover object-top w-48 max-h-60"
