@@ -18,7 +18,7 @@ export default function Home() {
             distance={20}
             decay={2}
             intensity={2}
-            color={"#fffff"}
+            color={"white"}
             position={[0, 4, 0.75]}
           />
 
