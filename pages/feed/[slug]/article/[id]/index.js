@@ -13,7 +13,7 @@ function article({ articles }) {
     options
   );
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-8 mt-12">
+    <div className="flex flex-col items-center justify-center w-full h-full gap-8 mt-12">
       <h1 className="text-2xl text-center text-slate-100">
         {articles[0].title}
       </h1>
@@ -25,7 +25,9 @@ function article({ articles }) {
         <h2 className="px-2 text-slate-100">{articles[0].source.domain}</h2>
       </div>
       <img className="w-1/3 " src={articles[0].imageUrl} />
-      <p className="w-3/4 text-slate-200 indent-8">{articles[0].content}</p>
+      <p className="w-3/4 mb-10 text-slate-200 indent-8">
+        {articles[0].content}
+      </p>
     </div>
   );
 }

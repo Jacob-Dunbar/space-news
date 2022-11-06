@@ -1,8 +1,6 @@
-import CraftCanvas from "../components/CraftCanvas.js";
-import Craft from "../components/Craft.js";
 import { useState, Suspense, useEffect } from "react";
-import CraftList from "../components/CraftList";
 import { Canvas } from "@react-three/fiber";
+import CraftList from "../components/CraftList";
 import Iss from "../components/Iss.js";
 import Tiangong from "../components/Tiangong.js";
 
