@@ -25,7 +25,7 @@ export default function Home() {
           <Text />
         </Canvas>
       </div>
-      <div className="flex flex-col w-1/3 gap-4 font-thin leading-6 tracking-wide">
+      <div className="flex flex-col w-1/3 gap-4 font-thin leading-6 tracking-wide sm:-mt-16 sm:w-4/6">
         <p className="text-center text-slate-200">
           A site for those with our heads beyond the clouds. Our mission is to
           inform the world about the goings on beyond the stratosphere, one

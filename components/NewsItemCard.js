@@ -17,7 +17,7 @@ function NewsItemCard({ article, pageNumber }) {
   return (
     <div className="flex flex-col items-center justify-center ">
       <Link
-        className="relative flex flex-col items-center justify-start w-1/2 px-8 py-4 pb-6 transition-all group hover:scale-102 h-1/2"
+        className="relative flex flex-col items-center justify-start w-1/2 px-8 py-4 pb-6 transition-all sm:py-1 sm:px-3 sm:w-11/12 group hover:scale-102 h-1/2"
         href="/feed/[slug]/article/[id]"
         as={`${pageNumber}/article/${article.articleId}`}
       >
@@ -27,7 +27,10 @@ function NewsItemCard({ article, pageNumber }) {
           <div className="absolute w-full h-full opacity-90 group-hover:opacity-80 bg-gradient-to-b from-black via-transparent to-transparent"></div>
           <div className="absolute w-full h-full opacity-90 group-hover:opacity-80 bg-gradient-to-l from-black via-transparent to-transparent"></div>
           <div className="absolute w-full h-full opacity-90 group-hover:opacity-80 bg-gradient-to-r from-black via-transparent to-transparent"></div>
-          <img className="w-full h-full" src={article.imageUrl} />
+          <img
+            className="w-full h-full sm:object-cover"
+            src={article.imageUrl}
+          />
         </div>
         {/* content */}
         <div className="z-10 flex flex-col items-start justify-between w-full pb-2 h-96">
@@ -38,14 +41,14 @@ function NewsItemCard({ article, pageNumber }) {
           {/* info */}
           <div className="flex flex-col justify-start w-4/5 py-2 pl-5 border-l">
             {/* date */}
-            <h1 className="pb-2 pr-3 text-lg font-thin tracking-wider border-b w-min text-slate-100">
+            <h1 className="pb-2 pr-3 text-lg font-thin tracking-wider border-b sm:text-base w-min text-slate-100">
               {date}
             </h1>
             {/* summary */}
             <p className="pt-3 text-xs font-thin indent-6 line-clamp-3 text-slate-300">
               {article.summary === "" ? article.description : article.summary}
             </p>
-            <p className="flex items-center gap-3 mt-3 text-left text-slate-100 group group-hover:text-orange-400">
+            <p className="flex items-center gap-3 mt-3 text-left sm:text-sm text-slate-100 group group-hover:text-orange-400">
               Read on
               <HiOutlineChevronDoubleRight className=" group-hover:animate-bounceLeft" />
             </p>
