@@ -40,9 +40,18 @@ function Astronaut(props) {
         />
       );
     } else if (showDetails && data.count === 1) {
-      return <Details astronaut={data} name={props.astronaut} />;
+      return (
+        <Details
+          astronaut={data}
+          setShowDetails={setShowDetails}
+          name={props.astronaut}
+          showDetails={showDetails}
+        />
+      );
     } else {
-      return <DetailsReject name={props.astronaut} />;
+      return (
+        <DetailsReject setShowDetails={setShowDetails} name={props.astronaut} />
+      );
     }
   }
 
@@ -54,11 +63,19 @@ function Astronaut(props) {
     }
   }
 
+  function handleBack(e) {
+    // if the blur was because of outside focus
+    // currentTarget is the parent element, relatedTarget is the clicked element
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setShowDetails(false);
+    }
+  }
+
   console.log(showDetails);
   return (
     <div
       className="pl-8 text-left"
-      onClick={() => setShowDetails(true)}
+      onClick={() => setShowDetails(!showDetails)}
       onBlur={handleBlur}
     >
       <button className="flex items-center justify-between py-3 font-light text-left border-t group focus:text-orange-400 w-44 text-slate-100">

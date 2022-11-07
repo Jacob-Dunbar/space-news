@@ -10,8 +10,6 @@ function Craft(props) {
 
   const [showPeople, setShowPeople] = useState(false);
 
-  console.log(astronautElements);
-
   function handleBlur(e) {
     // if the blur was because of outside focus
     // currentTarget is the parent element, relatedTarget is the clicked element

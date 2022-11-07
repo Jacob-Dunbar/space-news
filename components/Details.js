@@ -3,8 +3,11 @@ import {
   HiOutlineChevronDoubleLeft,
 } from "react-icons/hi";
 import Link from "next/link";
+import { useState } from "react";
 
 function Details(props) {
+  const [testState, setTestState] = useState(false);
+
   function flagIcon(nationaly) {
     if (nationaly === "Russian") {
       return <span className="h-4 ml-2 fi fi-ru "></span>;
@@ -33,11 +36,15 @@ function Details(props) {
   const nationality = props.astronaut.results[0].nationality;
 
   return (
-    <div className="absolute top-0 flex flex-col pl-8 sm:bg-black border-l-[1px] sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min">
-      <p className="flex items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
+    <div
+      // onClick={() => props.setShowDetails(false)}
+      className="absolute top-0 flex flex-col pl-8 sm:bg-black border-l-[1px] sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min"
+    >
+      <button className="flex items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
         <HiOutlineChevronDoubleLeft className="inline mr-2 " />
         Back
-      </p>
+      </button>
+
       <div className=" h-fit">
         <div className="absolute w-48 opacity-50 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
