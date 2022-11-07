@@ -71,7 +71,6 @@ function Astronaut(props) {
     }
   }
 
-  console.log(showDetails);
   return (
     <div
       className="pl-8 text-left"
