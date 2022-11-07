@@ -1,9 +1,10 @@
-import { HiOutlineChevronDoubleRight } from "react-icons/hi";
+import {
+  HiOutlineChevronDoubleRight,
+  HiOutlineChevronDoubleLeft,
+} from "react-icons/hi";
 import Link from "next/link";
 
 function Details(props) {
-  console.log(props.astronaut);
-
   function flagIcon(nationaly) {
     if (nationaly === "Russian") {
       return <span className="h-4 ml-2 fi fi-ru "></span>;
@@ -32,7 +33,11 @@ function Details(props) {
   const nationality = props.astronaut.results[0].nationality;
 
   return (
-    <div className="absolute top-0 flex flex-col pl-8 border-l mt-14 -right-64 h-min">
+    <div className="absolute top-0 flex flex-col pl-8 border-l sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-6 h-min">
+      <p className="flex items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
+        <HiOutlineChevronDoubleLeft className="inline " />
+        back
+      </p>
       <div className=" h-fit">
         <div className="absolute w-48 opacity-50 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
