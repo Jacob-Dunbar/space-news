@@ -74,8 +74,6 @@ function whos_in_space(props) {
     setCurrentCraft(newCraft);
   }
 
-  console.log(currentCraft);
-
   // Chose model to render Iss / Tiangong / misc craft
 
   function choseModel() {
@@ -89,17 +87,10 @@ function whos_in_space(props) {
   }
 
   return (
-    <div className="flex justify-end gap-6 pt-8 grow">
-      <div className="absolute w-full h-5/6">
+    <div className="flex justify-end gap-6 pt-8 sm:flex-col sm:justify-start sm:items-center grow">
+      <div className="absolute w-full sm:opacity-20 h-5/6">
         <Canvas>
           <Suspense fallback={null}>
-            {/* <spotLight
-              intensity={0.7}
-              angle={0.7}
-              penumbra={1}
-              position={[10, 80, 200]}
-              color={"#FFFFFF"}
-            /> */}
             <pointLight
               distance={20}
               decay={2}
@@ -111,7 +102,7 @@ function whos_in_space(props) {
           </Suspense>
         </Canvas>
       </div>
-      <h1 className="text-base tracking-wider text-slate-200">
+      <h1 className="text-base tracking-wider sm:w-11/12 sm:pl-3 text-slate-200">
         Currently manned craft in space:
       </h1>
       <div className="w-7/12 h-full ">
