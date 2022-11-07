@@ -33,7 +33,7 @@ function Details(props) {
   const nationality = props.astronaut.results[0].nationality;
 
   return (
-    <div className="absolute top-0 flex flex-col pl-8 border-l sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-6 h-min">
+    <div className="absolute top-0 flex flex-col pl-8 bg-black border-l-[1px] sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min">
       <p className="flex items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
         <HiOutlineChevronDoubleLeft className="inline " />
         back
