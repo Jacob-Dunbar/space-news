@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Canvas } from "@react-three/fiber";
 import Text from "../components/Space-news.js";
-import { Float } from "@react-three/drei";
+import Rocket from "../components/Rocket.js";
 
 export default function Home() {
   return (
@@ -23,9 +23,10 @@ export default function Home() {
           />
 
           <Text />
+          <Rocket />
         </Canvas>
       </div>
-      <div className="flex flex-col w-1/3 gap-4 font-thin leading-6 tracking-wide sm:-mt-16 sm:w-4/6">
+      <div className="flex flex-col w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:-mt-16 sm:w-4/6">
         <p className="text-center text-slate-200">
           A site for those with our heads beyond the clouds. Our mission is to
           inform the world about the goings on beyond the stratosphere, one

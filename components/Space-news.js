@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useGLTF, Float } from "@react-three/drei";
 
 export default function Model(props) {
@@ -10,7 +10,6 @@ export default function Model(props) {
   // Function to change state of isMobile
   const updateIsMobile = () => {
     setIsMobile(window.innerWidth < 415);
-    console.log(isMobile);
   };
 
   // Add event listener for screen resize and run updateIsMobile, plus cleanup.
@@ -29,8 +28,9 @@ export default function Model(props) {
   }
 
   return (
-    <Float speed={0.6} rotationIntensity={0.5} floatIntensity={4}>
+    <Float speed={1} rotationIntensity={0.4} floatIntensity={2.5}>
       <group
+        position={[0, 0.8, 0]}
         rotation={[1.5, 0, 0]}
         scale={choseScale()}
         {...props}
