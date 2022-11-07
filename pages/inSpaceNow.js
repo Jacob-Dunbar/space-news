@@ -4,7 +4,7 @@ import CraftList from "../components/CraftList";
 import Iss from "../components/Iss.js";
 import Tiangong from "../components/Tiangong.js";
 
-function whos_in_space(props) {
+function inSpaceNow(props) {
   const [currentCraft, setCurrentCraft] = useState("");
 
   //take array of people objects and generate array of craft objects
@@ -116,7 +116,7 @@ function whos_in_space(props) {
   );
 }
 
-export default whos_in_space;
+export default inSpaceNow;
 
 // Get Whos in space data from API
 
