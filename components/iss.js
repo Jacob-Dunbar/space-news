@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
@@ -6,6 +6,28 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/models/iss/scene.gltf");
   const group = useRef();
   const Mod = useRef();
+  // Set state for if on mobile or desktop
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 415);
+
+  // Function to change state of isMobile
+  const updateIsMobile = () => {
+    setIsMobile(window.innerWidth < 415);
+  };
+
+  // Add event listener for screen resize and run updateIsMobile, plus cleanup.
+
+  useEffect(() => {
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  });
+
+  function chosePosition() {
+    if (isMobile) {
+      return [0, 0, 0];
+    } else {
+      return [-3.5, 0, 0];
+    }
+  }
 
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() * 0.04;
@@ -17,7 +39,7 @@ export default function Model({ ...props }) {
   return (
     <group ref={group} {...props} dispose={null}>
       <OrbitControls enableZoom={false} enablePan={false} />
-      <group position={[-3.5, 0, 0]} rotation={[4, 0.8, 0.8]}>
+      <group position={chosePosition()} rotation={[4, 0.8, 0.8]}>
         <group rotation={[8, 2, 2]}>
           <group
             ref={Mod}
