@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
@@ -6,6 +6,29 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/models/tiangong/scene.gltf");
   const group = useRef();
   const Mod = useRef();
+
+  // Set state for if on mobile or desktop
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 415);
+
+  // Function to change state of isMobile
+  const updateIsMobile = () => {
+    setIsMobile(window.innerWidth < 415);
+  };
+
+  // Add event listener for screen resize and run updateIsMobile, plus cleanup.
+
+  useEffect(() => {
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  });
+
+  function chosePosition() {
+    if (isMobile) {
+      return [-0.2, 0, 0];
+    } else {
+      return [-3.8, 0, 0];
+    }
+  }
 
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() * 0.1;
@@ -20,7 +43,7 @@ export default function Model({ ...props }) {
       <group
         scale={[0.07, 0.07, 0.07]}
         rotation={[1.7, 8.8, 0]}
-        position={[-3.8, 0, 0]}
+        position={chosePosition()}
       >
         <group ref={Mod} rotation={[Math.PI / 2.9, 0, 0]}>
           <group position={[57.97, 31.02, 61.66]} rotation={[2, 0, 6]} />
