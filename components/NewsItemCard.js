@@ -35,20 +35,20 @@ function NewsItemCard({ article, pageNumber }) {
         {/* content */}
         <div className="z-10 flex flex-col items-start justify-between w-full pb-2 h-96">
           {/* title */}
-          <h1 className="py-2 pl-4 text-lg font-light leading-6 tracking-wide border-l text-slate-200">
+          <h1 className="py-2 pl-4 text-lg font-light leading-6 tracking-wide border-l text-slate-300">
             {article.title}
           </h1>
           {/* info */}
           <div className="flex flex-col justify-start w-4/5 py-2 pl-5 border-l">
             {/* date */}
-            <h1 className="pb-2 pr-3 text-lg font-thin tracking-wider border-b sm:text-base w-min text-slate-100">
+            <h1 className="pb-2 pr-3 text-lg font-thin tracking-wider border-b sm:text-base w-min text-slate-300">
               {date}
             </h1>
             {/* summary */}
             <p className="pt-3 text-xs font-thin indent-6 line-clamp-3 text-slate-300">
               {article.summary === "" ? article.description : article.summary}
             </p>
-            <p className="flex items-center gap-3 mt-3 text-left sm:text-sm text-slate-100 group group-hover:text-orange-400">
+            <p className="flex items-center gap-3 mt-3 text-left sm:text-sm text-slate-300 group group-hover:text-orange-400">
               Read on
               <HiOutlineChevronDoubleRight className=" group-hover:animate-bounceLeft" />
             </p>

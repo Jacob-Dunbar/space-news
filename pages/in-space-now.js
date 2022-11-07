@@ -102,7 +102,7 @@ function whos_in_space(props) {
           </Suspense>
         </Canvas>
       </div>
-      <h1 className="text-base tracking-wider sm:w-11/12 sm:pl-3 text-slate-200">
+      <h1 className="text-base tracking-wider sm:w-11/12 sm:pl-3 text-slate-300">
         Currently manned craft in space:
       </h1>
       <div className="w-7/12 h-full ">

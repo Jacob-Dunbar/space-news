@@ -16,9 +16,9 @@ function feed({ pageNumber, articles }) {
       </h1>
       {newsElements}
 
-      <div className="flex items-center gap-10 mb-11">
+      <div className="flex items-center gap-10 mb-11 ">
         <Link
-          className=" text-slate-100"
+          className="p-2  text-slate-300 hover:text-orange-400 hover:animate-bounceLeft"
           href={
             pageNumber > 1 ? `/feed/${pageNumber - 1}` : `/feed/${pageNumber}`
           }
@@ -29,7 +29,7 @@ function feed({ pageNumber, articles }) {
         <p className=" text-slate-100">{pageNumber}</p>
 
         <Link
-          className=" text-slate-100"
+          className="p-2  text-slate-300 hover:text-orange-400 hover:animate-bounceLeft"
           href={
             pageNumber < 5 ? `/feed/${pageNumber + 1}` : `/feed/${pageNumber}`
           }
