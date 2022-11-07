@@ -14,7 +14,11 @@ function CraftList(props) {
     );
   });
 
-  return <div className="mt-8 sm:-ml-5 ">{peopleInSpaceElements}</div>;
+  return (
+    <div className="mt-8 sm:mb-96 sm:mt-0 sm:-ml-5 ">
+      {peopleInSpaceElements}
+    </div>
+  );
 }
 
 export default CraftList;

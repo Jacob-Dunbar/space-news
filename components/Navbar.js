@@ -10,7 +10,7 @@ function Navbar(props) {
           alt="space news logo"
         />
       </div>
-      <div className="flex sm:bg-black sm:fixed sm:justify-center sm:h-12 sm:items-center sm:gap-4 sm:w-full sm:z-20 sm:bottom-0">
+      <div className="flex sm:bg-black sm:m-auto sm:left-0 sm:right-0 sm:fixed sm:justify-center sm:rounded-lg sm:h-12 sm:opacity-95 sm:items-center sm:bg-slate-900 sm:gap-4 sm:w-11/12 sm:z-30 sm:bottom-4">
         <Link
           onClick={() => props.changePage("home")}
           className={`px-3 text-xs font-bold tracking-widest uppercase cursor-pointer ${

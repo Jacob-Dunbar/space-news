@@ -46,9 +46,9 @@ function Details(props) {
       </button>
 
       <div className=" h-fit">
-        <div className="absolute w-48 opacity-50 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
+        <div className="absolute w-48 opacity-60 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
-          className="object-cover object-top w-48 max-h-60"
+          className="object-cover object-top w-48 bg-black max-h-60"
           src={props.astronaut.results[0].profile_image}
           alt=""
         />

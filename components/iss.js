@@ -23,7 +23,7 @@ export default function Model({ ...props }) {
 
   function chosePosition() {
     if (isMobile) {
-      return [0, 0, 0];
+      return [0, 1, 0];
     } else {
       return [-3.5, 0, 0];
     }
@@ -38,7 +38,6 @@ export default function Model({ ...props }) {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <OrbitControls enableZoom={false} enablePan={false} />
       <group position={chosePosition()} rotation={[4, 0.8, 0.8]}>
         <group rotation={[8, 2, 2]}>
           <group
