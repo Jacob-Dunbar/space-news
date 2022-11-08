@@ -17,7 +17,7 @@ function NewsItemCard({ article, pageNumber }) {
   return (
     <div className="flex flex-col items-center justify-center ">
       <Link
-        className="relative flex flex-col items-center justify-start w-1/2 px-8 py-4 pb-6 transition-all sm:py-1 sm:px-3 sm:w-11/12 group hover:scale-102 h-1/2"
+        className="relative flex flex-col items-center justify-start w-1/2 px-8 py-4 pb-6 transition-all min-w-[600px] sm:min-w-0  sm:py-1 sm:px-3 sm:w-11/12 group hover:scale-102 h-1/2"
         href="/feed/[slug]/article/[id]"
         as={`${pageNumber}/article/${article.articleId}`}
       >
