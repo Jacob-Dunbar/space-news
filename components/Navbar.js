@@ -2,15 +2,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 function Navbar(props) {
-  // Get the current route
-
+  // Get the current route to allow navbar to know what page we are on
   const router = useRouter();
   const currentRoute = router.pathname;
 
-  // Render Link
-
   return (
     <nav className=" w-full flex  justify-between h-16 items-center w-100% sm:px-0 px-5">
+      {/* Logo */}
       <div>
         <img
           className="w-40 pt-2 pl-3 sm:pl-5"
@@ -18,6 +16,7 @@ function Navbar(props) {
           alt="space news logo"
         />
       </div>
+      {/* Menu */}
       <div className="flex sm:bg-black sm:m-auto sm:left-0 sm:right-0 sm:fixed sm:justify-center sm:rounded-lg sm:h-12 sm:opacity-95 sm:items-center sm:bg-slate-900 sm:gap-4 sm:w-11/12 sm:z-30 sm:bottom-4">
         <Link
           className={`px-3 sm:px-2 text-xs font-bold tracking-widest uppercase cursor-pointer ${

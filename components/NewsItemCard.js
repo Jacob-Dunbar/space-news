@@ -2,17 +2,15 @@ import Link from "next/link";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 function NewsItemCard({ article, pageNumber }) {
-  console.log(article);
-
+  // Options object for toLocaleDateString method format date
   const options = {
     month: "numeric",
     day: "numeric",
     year: "numeric",
   };
 
+  // Format date into user friendly format
   const date = new Date(article.addDate).toLocaleDateString("en-GB", options);
-
-  //chose summary
 
   return (
     <div className="flex flex-col items-center justify-center ">

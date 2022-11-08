@@ -29,6 +29,7 @@ export default function Model(props) {
     }
   }
 
+  // Slow rotate anaimation
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() * 0.1;
     const b = clock.getElapsedTime() * 0.04 + 2.9;

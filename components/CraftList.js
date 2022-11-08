@@ -1,8 +1,8 @@
-import React from "react";
-import Craft from "../components/Craft";
+import Craft from "./Craft";
 
 function CraftList(props) {
-  const peopleInSpaceElements = props.peopleInSpace.map((craft, index) => {
+  // Create list of craft currently in space
+  const craftElements = props.craftsArray.map((craft, index) => {
     return (
       <Craft
         key={index}
@@ -14,11 +14,7 @@ function CraftList(props) {
     );
   });
 
-  return (
-    <div className="mt-8 sm:mb-96 sm:mt-4 sm:-ml-5 ">
-      {peopleInSpaceElements}
-    </div>
-  );
+  return <div className="mt-8 sm:mb-96 sm:mt-4 sm:-ml-5 ">{craftElements}</div>;
 }
 
 export default CraftList;

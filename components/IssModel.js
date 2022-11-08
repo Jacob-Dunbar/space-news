@@ -6,6 +6,7 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/models/iss/scene.gltf");
   const group = useRef();
   const Mod = useRef();
+
   // Set state for if on mobile or desktop
   const [isMobile, setIsMobile] = useState(window.innerWidth < 415);
 
@@ -15,7 +16,6 @@ export default function Model({ ...props }) {
   };
 
   // Add event listener for screen resize and run updateIsMobile, plus cleanup.
-
   useEffect(() => {
     window.addEventListener("resize", updateIsMobile);
     return () => window.removeEventListener("resize", updateIsMobile);
@@ -29,6 +29,7 @@ export default function Model({ ...props }) {
     }
   }
 
+  // Slow rotate animation
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() * 0.04;
     const b = clock.getElapsedTime() * 0.04 - 3.8;

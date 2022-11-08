@@ -3,6 +3,7 @@ import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("/models/text/rocket.gltf");
+
   // Set state for if on mobile or desktop
   const [isMobile, setIsMobile] = useState(window.innerWidth < 415);
 
@@ -12,12 +13,12 @@ export default function Model(props) {
   };
 
   // Add event listener for screen resize and run updateIsMobile, plus cleanup.
-
   useEffect(() => {
     window.addEventListener("resize", updateIsMobile);
     return () => window.removeEventListener("resize", updateIsMobile);
   });
 
+  // Adjust scale of model for mobile
   function choseScale() {
     if (isMobile) {
       return [1.3, 1.3, 1.3];
@@ -26,6 +27,7 @@ export default function Model(props) {
     }
   }
 
+  // Adjust position of model for mobile
   function chosePosition() {
     if (isMobile) {
       return [-5.2, -2, 0];

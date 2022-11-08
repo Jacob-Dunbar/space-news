@@ -13,12 +13,12 @@ export default function Model(props) {
   };
 
   // Add event listener for screen resize and run updateIsMobile, plus cleanup.
-
   useEffect(() => {
     window.addEventListener("resize", updateIsMobile);
     return () => window.removeEventListener("resize", updateIsMobile);
   });
 
+  // Adjust scale of model for mobile
   function choseScale() {
     if (isMobile) {
       return [1.2, 1.2, 1.2];
@@ -28,7 +28,7 @@ export default function Model(props) {
   }
 
   return (
-    <Float speed={1} rotationIntensity={0.4} floatIntensity={2.5}>
+    <Float speed={1.1} rotationIntensity={0.2} floatIntensity={3}>
       <group
         position={[0, 0.8, 0]}
         rotation={[1.5, 0, 0]}

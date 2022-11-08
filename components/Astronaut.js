@@ -5,13 +5,16 @@ import DetailsReject from "./DetailsReject.js";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 function Astronaut(props) {
+  // Fetched astronaut details
   const [data, setData] = useState(null);
+
+  // Loading state
   const [isLoading, setLoading] = useState(false);
+
+  // Show/hide details
   const [showDetails, setShowDetails] = useState(false);
 
-  // fetch data for all astonauts on craft
-  // should this be use effect or just get static or server side?
-
+  // Fetch data for all astonauts on craft
   useEffect(() => {
     setLoading(true);
     fetch(
@@ -28,6 +31,7 @@ function Astronaut(props) {
       });
   }, []);
 
+  // Show details function to show loading spinner or details component
   function renderDetails() {
     if (!showDetails) {
       return;
@@ -55,16 +59,8 @@ function Astronaut(props) {
     }
   }
 
+  // Handle blur allows learn more to be clicked without loss of focus causing link to disapear before click registered.
   function handleBlur(e) {
-    // if the blur was because of outside focus
-    // currentTarget is the parent element, relatedTarget is the clicked element
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      setShowDetails(false);
-    }
-  }
-
-  function handleBack(e) {
-    // if the blur was because of outside focus
     // currentTarget is the parent element, relatedTarget is the clicked element
     if (!e.currentTarget.contains(e.relatedTarget)) {
       setShowDetails(false);
@@ -72,16 +68,18 @@ function Astronaut(props) {
   }
 
   return (
+    // Container
     <div
       className="pl-8 text-left"
       onClick={() => setShowDetails(!showDetails)}
       onBlur={handleBlur}
     >
+      {/* Astonaut list item*/}
       <button className="flex items-center justify-between py-3 font-light text-left border-t group focus:text-orange-400 w-44 text-slate-100">
         {props.astronaut}
         <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
       </button>
-
+      {/* Details pop up */}
       {renderDetails()}
     </div>
   );

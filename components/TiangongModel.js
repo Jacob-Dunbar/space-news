@@ -16,12 +16,12 @@ export default function Model({ ...props }) {
   };
 
   // Add event listener for screen resize and run updateIsMobile, plus cleanup.
-
   useEffect(() => {
     window.addEventListener("resize", updateIsMobile);
     return () => window.removeEventListener("resize", updateIsMobile);
   });
 
+  // Adjust position of model for mobile
   function chosePosition() {
     if (isMobile) {
       return [-0.2, 0, 0];
@@ -29,7 +29,8 @@ export default function Model({ ...props }) {
       return [-3.8, 0, 0];
     }
   }
-
+ 
+  // Slow rotate animation
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() * 0.1;
     const b = clock.getElapsedTime() * 0.04 + 2.9;

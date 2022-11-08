@@ -3,11 +3,9 @@ import {
   HiOutlineChevronDoubleLeft,
 } from "react-icons/hi";
 import Link from "next/link";
-import { useState } from "react";
 
 function Details(props) {
-  const [testState, setTestState] = useState(false);
-
+  // Choose flag icon based on astonaut nationality.
   function flagIcon(nationaly) {
     if (nationaly === "Russian") {
       return <span className="h-4 ml-2 fi fi-ru "></span>;
@@ -32,38 +30,39 @@ function Details(props) {
     }
   }
 
-  // set nationaly for astronaut to variable
+  // Set nationaly for astronaut to variable
   const nationality = props.astronaut.results[0].nationality;
 
   return (
-    <div
-      // onClick={() => props.setShowDetails(false)}
-      className="absolute top-0 flex flex-col pl-8 sm:bg-black border-l-[1px] sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min"
-    >
+    // Container
+    <div className="absolute top-0 flex flex-col pl-8 sm:bg-black border-l-[1px] sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min">
+      {/* Back Button for mobile */}
       <button className="flex items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
         <HiOutlineChevronDoubleLeft className="inline mr-2 " />
         Back
       </button>
-
+      {/* Profile pic with gradient overlay */}
       <div className=" h-fit">
         <div className="absolute w-48 opacity-60 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
           className="object-cover object-top w-48 bg-black max-h-60"
           src={props.astronaut.results[0].profile_image}
-          alt=""
+          alt="astonaut profile picture"
         />
       </div>
-
+      {/* Details section */}
       <div className="w-48">
+        {/* Name and flag */}
         <h1 className="w-48 py-3 text-lg font-light text-slate-100">
           {props.name}
           {flagIcon(nationality)}
         </h1>
-        <span className=""></span>
       </div>
+      {/* Bio */}
       <p className="w-48 pt-4 text-xs font-light leading-5 border-t indent-4 line-clamp-5 text-slate-100">
         {props.astronaut.results[0].bio}
       </p>
+      {/* Wiki link */}
       <Link
         target="_blank"
         href={props.astronaut.results[0].wiki}
@@ -72,11 +71,10 @@ function Details(props) {
         Learn More{" "}
         <HiOutlineChevronDoubleRight className=" group-hover:animate-bounceLeft" />
       </Link>
+      {/* spacer */}
       <div className="h-2 "></div>
     </div>
   );
 }
-{
-  /* <HiOutlineChevronDoubleRight /> */
-}
+
 export default Details;

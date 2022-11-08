@@ -4,9 +4,9 @@ import CraftList from "../components/CraftList";
 import Iss from "../components/IssModel.js";
 import Tiangong from "../components/TiangongModel.js";
 import Generic from "../components/GenericModel.js";
+import Head from "next/head";
 
 // Get Whos in space data from API
-
 export const getServerSideProps = async () => {
   const apiResponse = await fetch("http://api.open-notify.org/astros.json");
 
@@ -22,17 +22,18 @@ export const getServerSideProps = async () => {
 };
 
 function InSpaceNow(props) {
+  // State to decide which craft is currently selected
   const [currentCraft, setCurrentCraft] = useState("");
 
-  //take array of people objects and generate array of craft objects
+  // Take array of people objects and generate array of craft objects with people within
   function generateCrafts(people) {
-    // empty array for people not in ISS or Tiangong
+    // Empty array for people not in ISS or Tiangong
     let miscArr = [];
 
-    // potential new craft 1
+    // Potential new craft 1
     let newCraft = { craft: "", name: [] };
 
-    // potential new craft 2
+    // Potential new craft 2
     let newCraft2 = { craft: "", name: [] };
 
     // Array of 2 objects, one for each space station.
@@ -41,7 +42,7 @@ function InSpaceNow(props) {
       { craft: "tiangong", name: [] },
     ];
 
-    // If the person is in ISS push name to craftsArray[0].name aand same for if in Tiangong.
+    // If the person is in ISS push name to craftsArray[0].name and same for if in Tiangong.
     // If in neither space station push whole person object to miscArr
     people.map((person) => {
       if (person.craft === "ISS") {
@@ -53,7 +54,7 @@ function InSpaceNow(props) {
       }
     });
 
-    //For each person object in miscArr, check if their craft is new
+    // For each person object in miscArr, check if their craft is new
     // If so make newCraft.craft = person.craft
     // If the next person.craft = newCraft.craft, push thier name to newCraft.name too
     for (let i = 0; i < miscArr.length; i++) {
@@ -82,22 +83,22 @@ function InSpaceNow(props) {
     return craftsArray;
   }
 
-  // real array
-  const peopleInSpace = generateCrafts(props.people);
+  // Crafts array
+  const craftsArray = generateCrafts(props.people);
 
-  //Change current craft function
-
+  // Change current craft function
   function changeCurrentCraft(newCraft) {
     setCurrentCraft(newCraft);
   }
 
-  // Chose model to render Iss / Tiangong / misc craft
-
+  // Choose model to render Iss / Tiangong / Generic craft
   function choseModel() {
     if (currentCraft === "iss") {
       return <Iss />;
     } else if (currentCraft === "tiangong") {
       return <Tiangong />;
+    } else if (currentCraft === "") {
+      return;
     } else {
       return <Generic />;
     }
@@ -105,6 +106,12 @@ function InSpaceNow(props) {
 
   return (
     <div className="flex justify-end gap-6 pt-8 sm:flex-col sm:justify-start sm:items-center grow">
+      <Head>
+        <title>Space News | In Space Now</title>
+        <meta name="Space News" content="Latest space news and information" />
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
+      {/* Craft model background */}
       <div className="absolute w-full sm:opacity-20 h-5/6">
         <Canvas>
           <Suspense fallback={null}>
@@ -119,12 +126,15 @@ function InSpaceNow(props) {
           </Suspense>
         </Canvas>
       </div>
+
+      {/* Heading */}
       <h1 className="text-base tracking-wider sm:w-11/12 sm:pl-3 text-slate-300">
         Currently manned craft in space:
       </h1>
+      {/* Craft list*/}
       <div className="w-7/12 h-full ">
         <CraftList
-          peopleInSpace={peopleInSpace}
+          craftsArray={craftsArray}
           changeCurrentCraft={changeCurrentCraft}
           currentCraft={currentCraft}
         />
