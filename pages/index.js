@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import Text from "../components/Space-news.js";
 import Rocket from "../components/Rocket.js";
 import { Suspense } from "react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
         </Canvas>
       </div>
       {/* Intro text */}
-      <div className="flex flex-col w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:mb-4 sm:-mt-16 sm:w-5/6">
+      <div className="flex flex-col items-center w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:mb-4 sm:-mt-16 sm:w-5/6">
         <p className="text-center text-slate-200">
           A site for those with our heads beyond the clouds. Our mission is to
           inform the world about the goings on beyond the stratosphere, one
@@ -41,7 +42,11 @@ export default function Home() {
           who are up there in person, right now, in the ‘In space now’ section
           of this site.
         </p>
-        <p className="text-center text-slate-200">Live long and prosper. 👽</p>
+        {/* <p className="text-center text-slate-200">Live long and prosper. 👽</p>
+         */}
+        <button className="px-4 py-1 mt-3 font-semibold text-orange-400 border border-orange-400 opacity-75 hover:opacity-100 rounded-2xl w-fit">
+          <Link href={"/feed/1"}>Check out latest news</Link>
+        </button>
       </div>
     </div>
   );
