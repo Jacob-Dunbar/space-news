@@ -4,7 +4,23 @@ import CraftList from "../components/CraftList";
 import Iss from "../components/Iss.js";
 import Tiangong from "../components/Tiangong.js";
 
-function inSpaceNow(props) {
+// Get Whos in space data from API
+
+export const getServerSideProps = async () => {
+  const apiResponse = await fetch("http://api.open-notify.org/astros.json");
+
+  const apiJson = await apiResponse.json();
+
+  const { people } = apiJson;
+
+  return {
+    props: {
+      people,
+    },
+  };
+};
+
+function InSpaceNow(props) {
   const [currentCraft, setCurrentCraft] = useState("");
 
   //take array of people objects and generate array of craft objects
@@ -116,20 +132,4 @@ function inSpaceNow(props) {
   );
 }
 
-export default inSpaceNow;
-
-// Get Whos in space data from API
-
-export const getServerSideProps = async () => {
-  const apiResponse = await fetch("http://api.open-notify.org/astros.json");
-
-  const apiJson = await apiResponse.json();
-
-  const { people } = apiJson;
-
-  return {
-    props: {
-      people,
-    },
-  };
-};
+export default InSpaceNow;
