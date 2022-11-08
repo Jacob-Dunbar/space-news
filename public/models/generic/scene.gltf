@@ -1,0 +1,352 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.3.32",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                10
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "adapter",
+            "translation" : [
+                0,
+                5.44627571105957,
+                0
+            ]
+        },
+        {
+            "name" : "Cylinder_004",
+            "rotation" : [
+                0,
+                0.45399054884910583,
+                0,
+                0.8910065293312073
+            ],
+            "translation" : [
+                0,
+                -5.465925216674805,
+                0
+            ]
+        },
+        {
+            "name" : "fairing_back",
+            "translation" : [
+                0,
+                4.014571189880371,
+                0
+            ]
+        },
+        {
+            "name" : "fairing_front",
+            "translation" : [
+                0,
+                4.014571189880371,
+                0
+            ]
+        },
+        {
+            "children" : [
+                0,
+                1,
+                2,
+                3
+            ],
+            "name" : "_nd_stage_centaur",
+            "translation" : [
+                0,
+                11.9432954788208,
+                0
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Cylinder_008",
+            "translation" : [
+                0.06200788542628288,
+                7.7924652099609375,
+                0.17221546173095703
+            ]
+        },
+        {
+            "children" : [
+                5
+            ],
+            "name" : "_st_stage",
+            "translation" : [
+                0,
+                -9.104968070983887,
+                0
+            ]
+        },
+        {
+            "children" : [
+                4,
+                6
+            ],
+            "name" : "_root"
+        },
+        {
+            "children" : [
+                7
+            ],
+            "name" : "Meshes",
+            "scale" : [
+                5.297939300537109,
+                5.297939300537109,
+                5.297939300537109
+            ]
+        },
+        {
+            "children" : [
+                8
+            ],
+            "name" : "USDRoot",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.010000000707805157,
+                0.010000000707805157
+            ]
+        },
+        {
+            "children" : [
+                9
+            ],
+            "name" : "Sketchfab_model",
+            "rotation" : [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "Atlas_401",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Cube",
+            "pbrMetallicRoughness" : {
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.6000000238418579
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder_008",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7,
+                        "TEXCOORD_1" : 8
+                    },
+                    "indices" : 9,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "Atlas_401_baseColor",
+            "uri" : "Atlas_401_baseColor.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 7066,
+            "max" : [
+                2.093539237976074,
+                29.623878479003906,
+                1.983332633972168
+            ],
+            "min" : [
+                -2.217555046081543,
+                -27.001907348632812,
+                -2.327763557434082
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 7066,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 7066,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 7066,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 25470,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 104,
+            "max" : [
+                0.9166268110275269,
+                19.9494571685791,
+                0.8064192533493042
+            ],
+            "min" : [
+                -1.0406426191329956,
+                1.0625028610229492,
+                -1.1508501768112183
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 104,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 104,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 104,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5123,
+            "count" : 276,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 84792,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 84792,
+            "byteOffset" : 84792,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 56528,
+            "byteOffset" : 169584,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 56528,
+            "byteOffset" : 226112,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 50940,
+            "byteOffset" : 282640,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1248,
+            "byteOffset" : 333580,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1248,
+            "byteOffset" : 334828,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 832,
+            "byteOffset" : 336076,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 832,
+            "byteOffset" : 336908,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 552,
+            "byteOffset" : 337740,
+            "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 338292,
+            "uri" : "scene.bin"
+        }
+    ]
+}

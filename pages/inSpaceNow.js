@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import CraftList from "../components/CraftList";
 import Iss from "../components/IssModel.js";
 import Tiangong from "../components/TiangongModel.js";
+import Generic from "../components/GenericModel.js";
 
 // Get Whos in space data from API
 
@@ -98,7 +99,7 @@ function InSpaceNow(props) {
     } else if (currentCraft === "tiangong") {
       return <Tiangong />;
     } else {
-      return;
+      return <Generic />;
     }
   }
 
