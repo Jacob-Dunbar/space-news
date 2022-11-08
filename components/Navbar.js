@@ -34,7 +34,7 @@ function Navbar(props) {
           className={`px-3 text-xs sm:w-24 text-center font-bold tracking-widest uppercase cursor-pointer ${
             props.page === "isn" ? "text-orange-400" : "text-slate-300"
           }`}
-          href="/in-space-now"
+          href="/inSpaceNow"
         >
           In space now
         </Link>
