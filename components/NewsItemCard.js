@@ -35,7 +35,7 @@ function NewsItemCard({ article, pageNumber }) {
         {/* content */}
         <div className="z-10 flex flex-col items-start justify-between w-full pb-2 h-96">
           {/* title */}
-          <h1 className="py-2 pl-4 text-lg font-light leading-6 tracking-wide border-l text-slate-300">
+          <h1 className="py-2 pl-4 text-lg font-medium leading-6 tracking-wide border-l text-slate-300">
             {article.title}
           </h1>
           {/* info */}
