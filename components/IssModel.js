@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { useGLTF, OrbitControls } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model({ ...props }) {

@@ -1,8 +1,8 @@
 import { useState, Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import CraftList from "../components/CraftList";
-import Iss from "../components/Iss.js";
-import Tiangong from "../components/Tiangong.js";
+import Iss from "../components/IssModel.js";
+import Tiangong from "../components/TiangongModel.js";
 
 // Get Whos in space data from API
 
