@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Canvas } from "@react-three/fiber";
 import Text from "../components/Space-news.js";
 import Rocket from "../components/Rocket.js";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -13,20 +14,21 @@ export default function Home() {
       </Head>
       <div className="w-full h-72">
         <Canvas>
-          <perspectiveCamera />
-          <pointLight
-            distance={20}
-            decay={2}
-            intensity={2}
-            color={"white"}
-            position={[0, 4, 0.75]}
-          />
+          <Suspense>
+            <pointLight
+              distance={20}
+              decay={2}
+              intensity={2}
+              color={"white"}
+              position={[0, 4, 0.75]}
+            />
 
-          <Text />
-          <Rocket />
+            <Text />
+            <Rocket />
+          </Suspense>
         </Canvas>
       </div>
-      <div className="flex flex-col w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:-mt-16 sm:w-4/6">
+      <div className="flex flex-col w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:mb-4 sm:-mt-16 sm:w-5/6">
         <p className="text-center text-slate-200">
           A site for those with our heads beyond the clouds. Our mission is to
           inform the world about the goings on beyond the stratosphere, one
