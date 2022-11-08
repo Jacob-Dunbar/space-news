@@ -15,7 +15,7 @@ function CraftList(props) {
   });
 
   return (
-    <div className="mt-8 sm:mb-96 sm:mt-0 sm:-ml-5 ">
+    <div className="mt-8 sm:mb-96 sm:mt-4 sm:-ml-5 ">
       {peopleInSpaceElements}
     </div>
   );
