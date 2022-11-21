@@ -2,7 +2,7 @@ import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 import { HiOutlineChevronDoubleLeft } from "react-icons/hi";
 import NewsItemCard from "../../../components/NewsItemCard.js";
 import Link from "next/link";
-import Head from 'next/head'
+import Head from "next/head";
 
 // Fetch data from perigon news API, article in science catagory that mention nasa, spacex or milky way.
 export const getServerSideProps = async (pageContext) => {
@@ -33,14 +33,14 @@ function feed({ pageNumber, articles }) {
 
   return (
     <div className="relative flex flex-col items-center justify-start w-full gap-8 pt-8 ">
-       <Head>
+      <Head>
         <title>Space News | Feed</title>
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       {/* heading */}
       <h1 className="w-1/2 text-base tracking-wider sm:pl-3 sm:w-11/12 text-slate-200">
-        Most recent stories:
+        Top Stories:
       </h1>
 
       {/* News elements list */}
