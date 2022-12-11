@@ -9,3 +9,54 @@
     font-family: "inter", sans-serif;
   }
 }
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: #bcbcbc40;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardBorder {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 1;
+  transition: all 500ms ease;
+}
+
+.cardBorder:hover {
+  opacity: 1;
+}
+
+.grad {
+  /* background: radial-gradient(
+    300px circle at 150px 150px,
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  ); */
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 20;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.grad:hover {
+  opacity: 1;
+}

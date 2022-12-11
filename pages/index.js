@@ -2,8 +2,10 @@ import Head from "next/head";
 import { Canvas } from "@react-three/fiber";
 import Text from "../components/Space-news.js";
 import Rocket from "../components/Rocket.js";
-import { Suspense } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import useMouse from "@react-hook/mouse-position";
+import NewsCard from "../components/NewsCard";
 
 export default function Home() {
   return (
@@ -13,8 +15,10 @@ export default function Home() {
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
+      <NewsCard />
+
       {/* Animated header */}
-      <div className="w-full h-72">
+      {/* <div className="w-full h-72">
         <Canvas>
           <Suspense>
             <pointLight
@@ -29,9 +33,9 @@ export default function Home() {
             <Rocket />
           </Suspense>
         </Canvas>
-      </div>
+      </div> */}
       {/* Intro text */}
-      <div className="flex flex-col items-center w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:mb-4 sm:-mt-16 sm:w-5/6">
+      {/* <div className="flex flex-col items-center w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:mb-4 sm:-mt-16 sm:w-5/6">
         <p className="text-center text-slate-200">
           A site for those with our heads beyond the clouds. Our mission is to
           inform the world about the goings on beyond the stratosphere, one
@@ -44,10 +48,10 @@ export default function Home() {
         </p>
         {/* <p className="text-center text-slate-200">Live long and prosper. 👽</p>
          */}
-        <button className="px-4 py-1 mt-3 font-semibold text-orange-400 border border-orange-400 opacity-75 hover:opacity-100 rounded-2xl w-fit">
-          <Link href={"/feed/1"}>Check out latest news</Link>
-        </button>
-      </div>
+      {/* <button className="px-4 py-1 mt-3 font-semibold text-orange-400 border border-orange-400 opacity-75 hover:opacity-100 rounded-2xl w-fit">
+        <Link href={"/feed/1"}>Check out latest news</Link>
+      </button> */}
+      {/* </div>  */}
     </div>
   );
 }
