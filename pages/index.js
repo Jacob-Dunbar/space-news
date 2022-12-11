@@ -15,7 +15,12 @@ export default function Home() {
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <NewsCard />
+      <div className="grid grid-cols-2 gap-5 ">
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
+      </div>
 
       {/* Animated header */}
       {/* <div className="w-full h-72">
