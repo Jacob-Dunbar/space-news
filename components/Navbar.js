@@ -7,7 +7,7 @@ function Navbar(props) {
   const currentRoute = router.pathname;
 
   return (
-    <nav className=" w-full flex  z-50 justify-between h-16 items-center w-100% sm:px-0 px-5">
+    <nav className=" w-full flex  z-50 justify-between h-[8vh] items-center w-100% sm:px-0 px-5">
       {/* Logo */}
       <div>
         <img

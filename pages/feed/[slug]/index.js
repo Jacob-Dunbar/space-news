@@ -31,24 +31,24 @@ function feed({ pageNumber, articles }) {
     <NewsCard key={index} pageNumber={pageNumber} article={article} />
   ));
 
-  console.log(articles[0].title);
   return (
-    <div className="relative flex flex-col items-center justify-start w-full gap-8 pt-8 ">
+    <div className="relative flex flex-col items-center justify-between w-full h-full gap-8 pt-8 ">
       <Head>
         <title>Space News | Feed</title>
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       {/* heading */}
-      <h1 className="w-1/2 text-base tracking-wider sm:pl-3 sm:w-11/12 text-slate-200">
-        Top Stories:
-      </h1>
+      <div>
+        <h1 className="w-1/2 mt-4 mb-8 font-sans text-lg font-thin tracking-widest sm:pl-3 sm:w-11/12 text-slate-200">
+          Top stories from around the web:
+        </h1>
 
-      {/* News elements list */}
-      {newsElements}
-
+        {/* News elements list */}
+        <div> {newsElements}</div>
+      </div>
       {/* Paginator */}
-      <div className="flex items-center gap-10 mb-11 ">
+      <div className="z-50 flex items-center gap-10 mt-auto mb-4 ">
         <Link
           className="p-2 text-slate-300 hover:text-orange-400 hover:animate-bounceLeft"
           href={
