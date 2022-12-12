@@ -6,6 +6,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import useMouse from "@react-hook/mouse-position";
 import NewsCard from "../components/NewsCard";
+import ParticleBackground from "../components/particleBackground.js";
 
 export default function Home() {
   return (
@@ -15,13 +16,28 @@ export default function Home() {
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <div className="grid grid-cols-2 gap-5 ">
+      {/* 
+      <div className="flex space-x-5 ">
+        <div className="flex flex-col space-y-5 ">
+          <NewsCard />
+          <NewsCard />
+        </div>
+        <div className="flex flex-col space-y-5 ">
+          <NewsCard />
+          <NewsCard />
+        </div>
+        <div className="flex flex-col space-y-5 ">
+          <NewsCard />
+          <NewsCard />
+        </div>
+      </div> */}
+
+      <div className="flex flex-col space-y-5 ">
         <NewsCard />
         <NewsCard />
         <NewsCard />
         <NewsCard />
       </div>
-
       {/* Animated header */}
       {/* <div className="w-full h-72">
         <Canvas>

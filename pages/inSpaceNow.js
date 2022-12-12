@@ -105,7 +105,7 @@ function InSpaceNow(props) {
   }
 
   return (
-    <div className="flex justify-end gap-6 pt-8 sm:flex-col sm:justify-start sm:items-center grow">
+    <div className="z-50 flex justify-end gap-6 pt-8 sm:flex-col sm:justify-start sm:items-center grow">
       <Head>
         <title>Space News | In Space Now</title>
         <meta name="Space News" content="Latest space news and information" />

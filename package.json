@@ -16,10 +16,13 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "flag-icons": "^6.6.6",
     "next": "13.0.0",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
-    "three": "^0.146.0"
+    "react-tsparticles": "^2.6.0",
+    "tailwindcss-filters": "^3.0.0",
+    "three": "^0.146.0",
+    "tsparticles": "^2.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

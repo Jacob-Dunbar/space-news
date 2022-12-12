@@ -1,5 +1,6 @@
 import useMouse from "@react-hook/mouse-position";
 import { useRef } from "react";
+import ParticleBackground from "./particleBackground";
 
 const NewsCard = () => {
   const ref = useRef(null);
@@ -9,7 +10,10 @@ const NewsCard = () => {
   });
   return (
     <div>
-      <div ref={ref} className="card group">
+      <div
+        ref={ref}
+        className="relative flex items-center justify-center transition-all duration-500 ease-in-out bg-black rounded-xl w-[600px] h-28 hover:h-72 group"
+      >
         <div
           className="opacity-0 cardBorder group-hover:opacity-100"
           style={{
@@ -20,7 +24,8 @@ const NewsCard = () => {
       )`,
           }}
         ></div>
-        <div className="bg-stars bg-cover blur-2 bg-white bg-opacity-10  bg z-10 h-[99%] w-[99%] rounded-[10px]"></div>
+        <div className="    absolute  backdrop-blur-sm backdrop-brightness-125 bg-white/5    z-20 h-[99%] w-[99.5%] rounded-[10px]"></div>
+        <div className="  bg-stars bg-contain   z-10 h-[99%] w-[99.5%] rounded-[10px]"></div>
         <div
           style={{
             background: `radial-gradient(
@@ -29,7 +34,7 @@ const NewsCard = () => {
         transparent 40%
       )`,
           }}
-          className="grad bg-clip-border"
+          className="grad "
         ></div>
       </div>
     </div>

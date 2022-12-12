@@ -48,6 +48,10 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         stars: "url('/stars.png')",
       },
+      backdropFilter: {
+        none: "none",
+        blur: "blur(20px)",
+      },
       keyframes: {
         bounceLeft: {
           "0%, 100%": {
@@ -60,5 +64,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [require("@tailwindcss/line-clamp"), require("tailwindcss-filters")],
 };
