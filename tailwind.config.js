@@ -37,6 +37,7 @@ module.exports = {
       },
       fontFamily: {
         body: ["Inter"],
+        sans: ["Lato"],
       },
       scale: {
         102: "1.02",

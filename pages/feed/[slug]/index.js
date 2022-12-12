@@ -1,6 +1,6 @@
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 import { HiOutlineChevronDoubleLeft } from "react-icons/hi";
-import NewsItemCard from "../../../components/NewsItemCard.js";
+import NewsCard from "../../../components/NewsCard.js";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -28,9 +28,10 @@ export const getServerSideProps = async (pageContext) => {
 function feed({ pageNumber, articles }) {
   // Generate news card components by mapping over article data fetched from news api
   const newsElements = articles.map((article, index) => (
-    <NewsItemCard key={index} pageNumber={pageNumber} article={article} />
+    <NewsCard key={index} pageNumber={pageNumber} article={article} />
   ));
 
+  console.log(articles[0].title);
   return (
     <div className="relative flex flex-col items-center justify-start w-full gap-8 pt-8 ">
       <Head>

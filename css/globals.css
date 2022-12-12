@@ -19,7 +19,6 @@
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 1;
 
   transition: all 500ms ease;
 }
@@ -37,7 +36,7 @@
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 20;
+
   opacity: 0;
   transition: all 500ms ease;
 }
