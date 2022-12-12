@@ -16,30 +16,9 @@ export default function Home() {
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      {/* 
-      <div className="flex space-x-5 ">
-        <div className="flex flex-col space-y-5 ">
-          <NewsCard />
-          <NewsCard />
-        </div>
-        <div className="flex flex-col space-y-5 ">
-          <NewsCard />
-          <NewsCard />
-        </div>
-        <div className="flex flex-col space-y-5 ">
-          <NewsCard />
-          <NewsCard />
-        </div>
-      </div> */}
 
-      <div className="flex flex-col space-y-5 ">
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-      </div>
       {/* Animated header */}
-      {/* <div className="w-full h-72">
+      <div className="w-full h-72">
         <Canvas>
           <Suspense>
             <pointLight
@@ -54,9 +33,9 @@ export default function Home() {
             <Rocket />
           </Suspense>
         </Canvas>
-      </div> */}
+      </div>
       {/* Intro text */}
-      {/* <div className="flex flex-col items-center w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:mb-4 sm:-mt-16 sm:w-5/6">
+      <div className="flex flex-col items-center w-1/3 gap-4 mt-4 font-thin leading-6 tracking-wide sm:mb-4 sm:-mt-16 sm:w-5/6">
         <p className="text-center text-slate-200">
           A site for those with our heads beyond the clouds. Our mission is to
           inform the world about the goings on beyond the stratosphere, one
@@ -67,12 +46,11 @@ export default function Home() {
           who are up there in person, right now, in the ‘In space now’ section
           of this site.
         </p>
-        {/* <p className="text-center text-slate-200">Live long and prosper. 👽</p>
-         */}
-      {/* <button className="px-4 py-1 mt-3 font-semibold text-orange-400 border border-orange-400 opacity-75 hover:opacity-100 rounded-2xl w-fit">
-        <Link href={"/feed/1"}>Check out latest news</Link>
-      </button> */}
-      {/* </div>  */}
+
+        <button className="px-4 py-1 mt-3 font-semibold text-orange-400 border border-orange-400 opacity-75 hover:opacity-100 rounded-2xl w-fit">
+          <Link href={"/feed/1"}>Check out latest news</Link>
+        </button>
+      </div>
     </div>
   );
 }

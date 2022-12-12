@@ -17,30 +17,32 @@ function Navbar(props) {
         />
       </div>
       {/* Menu */}
-      <div className="flex sm:bg-black sm:m-auto sm:left-0 sm:right-0 sm:fixed sm:justify-center sm:rounded-lg sm:h-12 sm:opacity-95 sm:items-center sm:bg-slate-900 sm:gap-4 sm:w-11/12 sm:z-30 sm:bottom-4">
+      <div className="flex items-center font-sans sm:m-auto sm:left-0 sm:right-0 sm:fixed sm:justify-center sm:rounded-lg sm:h-12 sm:opacity-95 sm:items-center sm:bg-slate-900 sm:gap-4 sm:w-11/12 sm:z-30 sm:bottom-4">
         <Link
-          className={`px-3 sm:px-2 text-xs font-bold tracking-widest uppercase cursor-pointer ${
-            currentRoute === "/" ? " text-orange-400" : " text-slate-300"
+          className={`px-3 sm:px-2   text-slate-300 tracking-widest uppercase cursor-pointer ${
+            currentRoute === "/"
+              ? "  font-semibold text-xs "
+              : " text-xs font-thin"
           }`}
           href="/"
         >
           Home
         </Link>
         <Link
-          className={`px-3 sm:px-6  text-xs font-bold tracking-widest uppercase cursor-pointer border-x ${
+          className={`px-3 sm:px-6   text-slate-300  tracking-widest uppercase cursor-pointer border-x ${
             currentRoute === "/feed/[slug]"
-              ? " text-orange-400"
-              : " text-slate-300"
+              ? " text-xs font-semibold  "
+              : " font-thin text-xs"
           }`}
           href="/feed/1"
         >
           News feed
         </Link>
         <Link
-          className={`px-3 sm:px-2 text-xs sm:w-24 text-center font-bold tracking-widest uppercase cursor-pointer ${
+          className={`px-3 sm:px-2  text-slate-300 sm:w-24 text-center  tracking-widest uppercase cursor-pointer ${
             currentRoute === "/inSpaceNow"
-              ? " text-orange-400"
-              : " text-slate-300"
+              ? " font-semibold text-xs "
+              : " font-thin text-xs"
           }`}
           href="/inSpaceNow"
         >
