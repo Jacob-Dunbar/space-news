@@ -105,17 +105,17 @@ function InSpaceNow(props) {
   }
 
   return (
-    <div className="z-50 min-h-[92vh] flex justify-end w-full  px-10 sm:flex-col sm:justify-start sm:items-center ">
+    <div className="z-50 min-h-[92vh]  flex justify-end w-full sm:w-screen sm:px-0  px-10 sm:flex-col sm:justify-start sm:items-center ">
       <Head>
         <title>Space News | In Space Now</title>
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       {/* Craft model background */}
-      <div className="w-1/2 min-h-[93vh]  sm:opacity-20 ">
+      <div className="w-1/2 sm:w-full min-h-[93vh] sm:absolute sm:opacity-20 ">
         <div
           className={` w-full h-full
-             transition-all duration-1000   ease-in-out  ${
+             transition-all sm:hidden duration-1000   ease-in-out  ${
                currentCraft ? "opacity-100" : "  opacity-0"
              }`}
         >
@@ -133,7 +133,7 @@ function InSpaceNow(props) {
           </Canvas>
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2 px-2 sm:w-full">
         {/* Heading */}
 
         {/* Craft list*/}

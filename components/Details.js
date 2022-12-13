@@ -33,15 +33,18 @@ function Details(props) {
 
   return (
     // Container
-    <div className="absolute flex flex-col pl-8 sm:bg-black border-l-[1px] sm:w-64 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min">
+    <div className="absolute flex flex-col pl-8 sm:pl-5 sm:w-[90%] sm:-top-5 sm:pr-2 sm:bg-[#0d0d0d]  sm:left-4   -right-64  h-min sm:rounded-xl">
       {/* Back Button for mobile */}
-      <button className="items-center w-full gap-3 pb-4 mt-3 text-left text-slate-100 ">
+      <button
+        onClick={() => props.setShowDetails(false)}
+        className="items-center w-full gap-3 pb-4 mt-3 text-left text-slate-100 "
+      >
         <HiOutlineChevronDoubleLeft className="inline mr-2 " />
         Back
       </button>
       {/* Profile pic with gradient overlay */}
-      <div className="">
-        <div className="absolute w-48 rounded-lg opacity-60 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
+      <div className="sm:flex sm:justify-center sm:w-full">
+        <div className="absolute w-48 rounded-lg sm:flex opacity-60 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
         <img
           className="object-cover object-top w-48 bg-black rounded-lg max-h-60"
           src={props.astronaut.results[0].profile_image}
@@ -49,7 +52,7 @@ function Details(props) {
         />
       </div>
       {/* Details section */}
-      <div className="w-48">
+      <div className="w-48 sm:w-full">
         {/* Name and flag */}
         <h1 className="w-48 py-3 text-lg font-light text-slate-100">
           {props.name}
@@ -57,7 +60,7 @@ function Details(props) {
         </h1>
       </div>
       {/* Bio */}
-      <p className="w-48 pt-4 text-xs font-light leading-5 border-t indent-4 line-clamp-5 text-slate-100">
+      <p className="w-48 pt-4 text-xs font-light leading-5 border-t sm:w-[95%] indent-4 line-clamp-5 text-slate-100">
         {props.astronaut.results[0].bio}
       </p>
       {/* Wiki link */}

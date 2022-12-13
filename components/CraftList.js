@@ -34,13 +34,13 @@ function CraftList(props) {
     <div className="h-full ">
       <div
         ref={ref}
-        className="relative z-50 overflow-y-hidden flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[500px] h-[620px] group"
+        className="relative z-50 sm:w-[95vw] sm:h-[660px] overflow-y-hidden flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[500px] h-[620px] group"
       >
         <div className="    absolute leading-7 pt-3 flex flex-col  backdrop-blur-sm backdrop-brightness-125 bg-white/5    z-20 h-[99.5%] w-[99.5%] rounded-[10px]">
-          <h1 className="pt-3 font-sans text-lg font-thin tracking-wider text-white pl-7">
+          <h1 className="pt-3 font-sans text-lg font-thin tracking-wider text-white sm:text-sm pl-7">
             Select a craft to learn about its crew :
           </h1>
-          <div className="z-50 flex mt-4 sm:mb-96 sm:mt-4 sm:-ml-5 ">
+          <div className="z-50 flex mt-4 sm:mb-96 sm:mt-4 sm:ml-5 ">
             {craftElements}
           </div>
           <div

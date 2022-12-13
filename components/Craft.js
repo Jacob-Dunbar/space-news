@@ -23,11 +23,11 @@ function Craft(props) {
     <div
       onClick={() => props.changeCurrentCraft(props.craftName)}
       onBlur={handleBlur}
-      className="flex flex-col pr-2 mt-1 overflow-x-hidden pl-7 "
+      className="flex flex-col pr-2 mt-1 pl-7 sm:ml-2 sm:pl-0 sm:pr-3 "
     >
       {/* Craft list item */}
       <button
-        className={`mb-3  text-3xl text-left capitalize  font-extralight  ${
+        className={`mb-3 sm:text-lg  text-3xl text-left capitalize  font-extralight  ${
           props.currentCraft === props.craftName
             ? "text-orange-400"
             : "text-slate-200"

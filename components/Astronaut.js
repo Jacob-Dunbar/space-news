@@ -40,7 +40,7 @@ function Astronaut(props) {
     } else if (isLoading) {
       return (
         <img
-          className="absolute w-8 sm:right-0 sm:top-3 top-20 -right-40"
+          className="absolute w-8 sm:left-60 sm sm:top-3 top-20 -right-40"
           src="/loading.gif"
           alt=""
         />
@@ -48,6 +48,7 @@ function Astronaut(props) {
     } else if (showDetails && data.count === 1) {
       return (
         <Details
+          className="z-50 "
           astronaut={data}
           setShowDetails={setShowDetails}
           name={props.astronaut}
@@ -91,7 +92,7 @@ function Astronaut(props) {
   function handleBlur(e) {
     // currentTarget is the parent element, relatedTarget is the clicked element
     if (!e.currentTarget.contains(e.relatedTarget)) {
-      setShowDetails(false);
+      setShowDetails(true);
     }
   }
 
@@ -105,6 +106,9 @@ function Astronaut(props) {
   return (
     // Container
     <div className="flex pl-8 overflow-x-hidden text-left">
+      {/* Details pop up */}
+      <div className="hidden sm:block">{renderDetailsMob()} </div>
+      <div className="block sm:hidden">{renderDetailsDesk()}</div>
       <div>
         {/* Astonaut list item*/}
         <button
@@ -114,12 +118,9 @@ function Astronaut(props) {
           className="flex items-center justify-between py-3 font-light text-left outline-none group focus:text-orange-400 w-44 text-slate-100"
         >
           {props.astronaut}
-          <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
+          <HiOutlineChevronDoubleRight className="hidden sm:group-focus:hidden animate-bounceLeft group-focus:inline" />
         </button>
       </div>
-      {/* Details pop up */}
-      <div className="hidden sm:block">{renderDetailsMob()} </div>
-      <div className="block sm:hidden">{renderDetailsDesk()}</div>
     </div>
   );
 }

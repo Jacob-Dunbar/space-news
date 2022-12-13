@@ -8,21 +8,24 @@ import { BsArrowRight } from "react-icons/bs";
 function DetailsReject(props) {
   return (
     // container
-    <div className="absolute top-0 flex flex-col ml-8 pl-8  sm:bg-black border-l-[1px]  sm:h-full sm:w-64  sm:z-20    h-min">
+    <div className="absolute sm:backdrop-blur-sm sm:pl-5 sm:h-[80%] sm:w-[90%] sm:-top-5 sm:pr-5 sm:bg-[#0d0d0d]  sm:-left-3  top-0 flex flex-col sm:rounded-md ml-8 pl-8   border-l-[1px] sm:border-l-0    sm:z-20    h-min">
       {/* Back button for mobile */}
-      <button className="items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
+      <button
+        onClick={() => props.setShowDetails(false)}
+        className="items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline"
+      >
         <HiOutlineChevronDoubleLeft className="inline mr-2 " />
         Back
       </button>
 
-      <div className="sm:flex sm:flex-col sm:justify-between sm:h-full w-44">
+      <div className="sm:flex sm:w-full sm:flex-col sm:justify-start sm:h-full w-44">
         <div>
           {/* Name */}
           <h1 className="py-3 text-lg font-light border-b-0 text-slate-100 w-44">
             {props.name}
           </h1>
           {/* No data message */}
-          <p className="pt-4 text-sm font-light border-t w-44 indent-4 line-clamp-8 text-slate-100">
+          <p className="pt-4 text-sm font-light border-t w-44 sm:w-full indent-4 line-clamp-8 text-slate-100">
             There is currently no data available for this astronaut.
           </p>
         </div>
