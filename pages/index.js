@@ -15,7 +15,7 @@ export default function Home() {
     leaveDelay: 100,
   });
   return (
-    <div className="flex items-center justify-center h-full pt-10 ">
+    <div className="flex items-center justify-center h-full pt-10 sm:pt-4 ">
       <Head>
         <title>Space News | Home</title>
         <meta name="Space News" content="Latest space news and information" />
@@ -23,16 +23,16 @@ export default function Home() {
       </Head>
       <div
         ref={ref}
-        className="relative mx-5 z-50 overflow-y-hidden h-[600px] flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[650px]  group"
+        className="relative mx-5 z-50 sm:mb-5 overflow-y-hidden sm:h-[600px] h-[620px] flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[650px] sm:w-[400px]  group"
       >
         <div className="   absolute leading-7 pt-3 px-10 py-10 flex items-center flex-col  backdrop-blur-sm backdrop-brightness-125 bg-white/5    z-20 h-[99.5%] w-[99.5%] rounded-[10px]">
-          <div className="relative mb-10">
+          <div className="relative mt-10 mb-10">
             <img
               src="/SPLogoGrey.svg"
               alt=""
-              className="z-50 mt-5 border-white rounded-full border-[1px] opacity-30 w-72"
+              className="z-50  border-white rounded-full border-[1px] opacity-30 w-72 sm:w-[200px]"
             />
-            <div className="absolute top-0 mt-5 rounded-full opacity-50 bg-gradient-to-bl from-black to-white -z-20 h-72 w-72"></div>
+            <div className="absolute top-0 rounded-full opacity-50 bg-gradient-to-bl from-black to-white -z-20 h-72 sm:w-[200px] sm:h-[200px] w-72"></div>
           </div>
 
           <div className="flex flex-col items-center w-full px-4 font-sans font-thin leading-6 tracking-wide ">
@@ -47,11 +47,11 @@ export default function Home() {
               those who are up there in person, right now, in the ‘In space now’
               section of this site.
             </p>
-            <div className="z-50 flex mt-3 space-x-5">
-              <button className="w-48 px-4 py-1 mt-3 font-semibold text-black border opacity-75 bg-slate-300 hover:opacity-100 rounded-2xl ">
-                <Link href={"/feed/1"}>Check out top stories</Link>
+            <div className="z-50 sm:hidden flex w-[120%] mt-3 space-x-5">
+              <button className="w-48 h-8 px-4 py-1 mt-3 font-semibold text-black border opacity-75 sm:w-56 sm:h-fit sm:text-sm hover:scale-102 bg-slate-100 hover:opacity-100 rounded-2xl ">
+                <Link href={"/feed/1"}>Top stories</Link>
               </button>
-              <button className="w-48 px-4 py-1 mt-3 font-semibold border opacity-75 border-slate-300 text-slate-300 hover:opacity-100 rounded-2xl">
+              <button className="w-48 h-8 px-4 py-1 mt-3 font-semibold border opacity-75 sm:text-sm sm:w-56 hover:scale-102 sm:h-fit border-slate-100 text-slate-100 hover:opacity-100 rounded-2xl">
                 <Link href={"/inSpaceNow"}>In space now</Link>
               </button>
             </div>
