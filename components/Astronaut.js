@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Details from "./Details.js";
 import DetailsDesk from "./DetailsDesk.js";
@@ -8,6 +8,7 @@ import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 function Astronaut(props) {
   // Fetched astronaut details
   const [data, setData] = useState(null);
+  const btnRef = useRef();
 
   // Loading state
   const [isLoading, setLoading] = useState(false);
@@ -94,16 +95,24 @@ function Astronaut(props) {
     }
   }
 
+  function handleClick() {
+    setShowDetails(true);
+    btnRef.current.focus();
+  }
+
+  console.log(showDetails);
+
   return (
     // Container
-    <div
-      className="flex pl-8 overflow-x-hidden text-left"
-      onClick={() => setShowDetails(!showDetails)}
-      onBlur={handleBlur}
-    >
+    <div className="flex pl-8 overflow-x-hidden text-left">
       <div>
         {/* Astonaut list item*/}
-        <button className="flex items-center justify-between py-3 font-light text-left group focus:text-orange-400 w-44 text-slate-100">
+        <button
+          ref={btnRef}
+          onClick={handleClick}
+          onBlur={handleBlur}
+          className="flex items-center justify-between py-3 font-light text-left outline-none group focus:text-orange-400 w-44 text-slate-100"
+        >
           {props.astronaut}
           <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
         </button>
