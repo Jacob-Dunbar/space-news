@@ -17,7 +17,7 @@ function Navbar(props) {
         />
       </div>
       {/* Menu */}
-      <div className="flex items-center font-sans sm:m-auto sm:left-0 sm:right-0 sm:fixed sm:justify-center sm:rounded-lg sm:h-12 sm:opacity-95 sm:items-center sm:backdrop-blur-md sm:bg-slate-100 sm:border-slate-800 border-[1px] sm:bg-opacity-5 sm:gap-4 sm:w-11/12 sm:z-30 sm:bottom-4">
+      <div className="flex items-center font-sans sm:m-auto sm:left-0 sm:right-0 sm:fixed sm:justify-center sm:h-16 sm:items-center sm:backdrop-blur-md sm:bg-slate-100 sm:bg-opacity-5 sm:gap-4 sm:w-full sm:z-30 sm:bottom-0">
         <Link
           className={`px-3 sm:px-2   text-slate-300 tracking-widest uppercase cursor-pointer ${
             currentRoute === "/"

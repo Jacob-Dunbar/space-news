@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       <div
         ref={ref}
-        className="relative mx-5 z-50 sm:mb-5 overflow-y-hidden sm:h-[600px] h-[620px] flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[650px] sm:w-[400px]  group"
+        className="relative mx-5 z-50 sm:mb-5 overflow-y-hidden sm:h-[620px] h-[620px] flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[650px] sm:w-[400px]  group"
       >
         <div className="   absolute leading-7 pt-3 px-10 py-10 flex items-center flex-col  backdrop-blur-sm backdrop-brightness-125 bg-white/5    z-20 h-[99.5%] w-[99.5%] rounded-[10px]">
           <div className="relative mt-10 mb-10">

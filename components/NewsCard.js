@@ -16,7 +16,7 @@ const NewsCard = ({ article, pageNumber }) => {
     <div>
       <div
         ref={ref}
-        className="relative z-50 mb-5 overflow-y-hidden flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[650px] h-16 hover:h-48 group"
+        className="relative z-50 sm:w-[85vw] mb-5 overflow-y-hidden flex items-center justify-center transition-all duration-700 ease-in-out bg-[#141414] rounded-xl w-[650px] h-16 hover:h-48 sm:hover:h-60 group"
       >
         <div className="    absolute leading-7 flex flex-col  backdrop-blur-sm backdrop-brightness-125 bg-white/5    z-20 h-[99%] w-[99.5%] rounded-[10px]">
           <div className="flex items-center w-full h-16 ">
@@ -27,15 +27,15 @@ const NewsCard = ({ article, pageNumber }) => {
               ></img>
             )}
 
-            <h1 className="px-4 py-3 font-sans font-light leading-10 text-transparent line-clamp-1 bg-gradient-to-l from-gray-300 to-white bg-clip-text">
+            <h1 className="px-4 py-3 font-sans font-light leading-10 text-transparent sm:leading-2 sm:text-xs sm:line-clamp-3 line-clamp-1 bg-gradient-to-l from-gray-300 to-white bg-clip-text">
               {article.title}
             </h1>
           </div>
           <div className="relative z-50 ">
-            <p className="absolute w-full pt-3 pl-20 pr-8 font-sans text-sm font-thin tracking-wide text-transparent transition-all duration-1000 opacity-0 pointer-events-none bg-gradient-to-l from-gray-500 to-gray-400 bg-clip-text -top-4 -left-10 group-hover:opacity-100 group-hover:-left-0 indent-6 line-clamp-3 text-slate-300">
+            <p className="absolute w-full pt-3 pl-20 pr-8 font-sans text-sm font-thin tracking-wide text-transparent transition-all duration-1000 opacity-0 pointer-events-none sm:text-xs sm:line-clamp-6 bg-gradient-to-l from-gray-500 to-gray-400 bg-clip-text sm:-top-2 -top-4 -left-10 group-hover:opacity-100 group-hover:-left-0 indent-6 line-clamp-3 text-slate-300">
               {article.summary === "" ? article.description : article.summary}
             </p>
-            <div className="absolute z-40 transition-all duration-700 delay-500 opacity-0 top-20 right-10 group-hover:opacity-100 group-hover:right-8 ">
+            <div className="absolute z-40 transition-all duration-700 delay-500 opacity-0 sm:top-32 top-20 right-10 group-hover:opacity-100 group-hover:right-8 ">
               <button className="border-[1px] -mt-1 z-50 cursor-pointer  items-center flex text-xs py-1 px-4 text-white border-white rounded-full group-hover:animate-pulse">
                 <Link
                   href="/feed/[slug]/article/[id]"
