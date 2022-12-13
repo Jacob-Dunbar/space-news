@@ -47,7 +47,7 @@ export default function Home() {
               those who are up there in person, right now, in the ‘In space now’
               section of this site.
             </p>
-            <div className="z-50 sm:hidden flex w-[120%] mt-3 space-x-5">
+            <div className="z-50 flex mt-3 space-x-5 sm:hidden">
               <button className="w-48 h-8 px-4 py-1 mt-3 font-semibold text-black border opacity-75 sm:w-56 sm:h-fit sm:text-sm hover:scale-102 bg-slate-100 hover:opacity-100 rounded-2xl ">
                 <Link href={"/feed/1"}>Top stories</Link>
               </button>
