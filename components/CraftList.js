@@ -40,7 +40,7 @@ function CraftList(props) {
           <h1 className="pt-3 font-sans text-lg font-thin tracking-wider text-white sm:text-sm pl-7">
             Select a craft to learn about its crew :
           </h1>
-          <div className="z-50 flex mt-4 sm:mb-96 sm:mt-4 sm:ml-5 ">
+          <div className="z-50 flex mt-4 ml-5 sm:mb-96 sm:mt-4 ">
             {craftElements}
           </div>
           <div

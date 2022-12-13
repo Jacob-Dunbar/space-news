@@ -3,7 +3,7 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Details from "./Details.js";
 import DetailsDesk from "./DetailsDesk.js";
 import DetailsReject from "./DetailsReject.js";
-import { HiOutlineChevronDoubleRight } from "react-icons/hi";
+import { HiOutlineChevronRight } from "react-icons/hi";
 
 function Astronaut(props) {
   // Fetched astronaut details
@@ -118,7 +118,7 @@ function Astronaut(props) {
           className="flex items-center justify-between py-3 font-light text-left outline-none group focus:text-orange-400 w-44 text-slate-100"
         >
           {props.astronaut}
-          <HiOutlineChevronDoubleRight className="hidden sm:group-focus:hidden animate-bounceLeft group-focus:inline" />
+          <HiOutlineChevronRight className="sm:group-focus:hidden text-slate-100 group-focus:animate-bounceLeft group-focus:text-orange-400" />
         </button>
       </div>
     </div>
