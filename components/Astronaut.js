@@ -65,7 +65,7 @@ function Astronaut(props) {
     } else if (isLoading) {
       return (
         <img
-          className="absolute w-8 sm:right-0 sm:top-3 top-20 -right-40"
+          className="absolute w-12 top-20 right-40"
           src="/loading.gif"
           alt=""
         />
@@ -97,7 +97,7 @@ function Astronaut(props) {
   return (
     // Container
     <div
-      className="flex pl-8 text-left"
+      className="flex pl-8 overflow-x-hidden text-left"
       onClick={() => setShowDetails(!showDetails)}
       onBlur={handleBlur}
     >
