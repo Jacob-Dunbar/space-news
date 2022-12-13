@@ -92,7 +92,7 @@ function Astronaut(props) {
   function handleBlur(e) {
     // currentTarget is the parent element, relatedTarget is the clicked element
     if (!e.currentTarget.contains(e.relatedTarget)) {
-      setShowDetails(true);
+      setShowDetails(false);
     }
   }
 

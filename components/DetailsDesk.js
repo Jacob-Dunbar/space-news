@@ -32,7 +32,7 @@ function Details(props) {
 
   return (
     // Container
-    <div className="absolute   flex  ml-8 flex-col pl-8 sm:bg-black border-l-[1px] top-0 sm:z-20 sm:top-0   h-min">
+    <div className="absolute left-52  flex  ml-8 flex-col pl-8 sm:bg-black border-l-[1px] top-0 sm:z-20 sm:top-0   h-min">
       {/* Profile pic with gradient overlay */}
 
       <div className="">

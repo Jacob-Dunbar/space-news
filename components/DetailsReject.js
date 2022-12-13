@@ -8,7 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 function DetailsReject(props) {
   return (
     // container
-    <div className="absolute sm:backdrop-blur-sm sm:pl-5 sm:h-[80%] sm:w-[90%] sm:-top-5 sm:pr-5 sm:bg-[#0d0d0d]  sm:-left-3  top-0 flex flex-col sm:rounded-md ml-8 pl-8   border-l-[1px] sm:border-l-0    sm:z-20    h-min">
+    <div className="absolute sm:backdrop-blur-sm left-52 sm:pl-5 sm:h-[80%] sm:w-[90%] sm:-top-5 sm:pr-5 sm:bg-[#0d0d0d]  sm:-left-3  top-0 flex flex-col sm:rounded-md ml-8 pl-8   border-l-[1px] sm:border-l-0    sm:z-20    h-min">
       {/* Back button for mobile */}
       <button
         onClick={() => props.setShowDetails(false)}
