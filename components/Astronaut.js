@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Details from "./Details.js";
+import DetailsDesk from "./DetailsDesk.js";
 import DetailsReject from "./DetailsReject.js";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
@@ -32,7 +33,7 @@ function Astronaut(props) {
   }, []);
 
   // Show details function to show loading spinner or details component
-  function renderDetails() {
+  function renderDetailsMob() {
     if (!showDetails) {
       return;
     } else if (isLoading) {
@@ -58,6 +59,32 @@ function Astronaut(props) {
       );
     }
   }
+  function renderDetailsDesk() {
+    if (!showDetails) {
+      return;
+    } else if (isLoading) {
+      return (
+        <img
+          className="absolute w-8 sm:right-0 sm:top-3 top-20 -right-40"
+          src="/loading.gif"
+          alt=""
+        />
+      );
+    } else if (showDetails && data.count === 1) {
+      return (
+        <DetailsDesk
+          astronaut={data}
+          setShowDetails={setShowDetails}
+          name={props.astronaut}
+          showDetails={showDetails}
+        />
+      );
+    } else {
+      return (
+        <DetailsReject setShowDetails={setShowDetails} name={props.astronaut} />
+      );
+    }
+  }
 
   // Handle blur allows learn more to be clicked without loss of focus causing link to disapear before click registered.
   function handleBlur(e) {
@@ -70,17 +97,20 @@ function Astronaut(props) {
   return (
     // Container
     <div
-      className="pl-8 text-left"
+      className="flex pl-8 text-left"
       onClick={() => setShowDetails(!showDetails)}
       onBlur={handleBlur}
     >
-      {/* Astonaut list item*/}
-      <button className="flex items-center justify-between py-3 font-light text-left border-t group focus:text-orange-400 w-44 text-slate-100">
-        {props.astronaut}
-        <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
-      </button>
+      <div>
+        {/* Astonaut list item*/}
+        <button className="flex items-center justify-between py-3 font-light text-left group focus:text-orange-400 w-44 text-slate-100">
+          {props.astronaut}
+          <HiOutlineChevronDoubleRight className="hidden animate-bounceLeft group-focus:inline" />
+        </button>
+      </div>
       {/* Details pop up */}
-      {renderDetails()}
+      <div className="hidden sm:block">{renderDetailsMob()} </div>
+      <div className="block sm:hidden">{renderDetailsDesk()}</div>
     </div>
   );
 }

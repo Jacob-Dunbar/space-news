@@ -25,7 +25,7 @@ export default function Model(props) {
     if (isMobile) {
       return [-0.2, 0, 0];
     } else {
-      return [-3, 0, 0];
+      return [0.5, -0.5, 0];
     }
   }
 

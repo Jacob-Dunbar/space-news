@@ -1,5 +1,4 @@
 import { BsArrowRight } from "react-icons/bs";
-import { HiOutlineChevronDoubleLeft } from "react-icons/hi";
 import Link from "next/link";
 
 function Details(props) {
@@ -33,23 +32,21 @@ function Details(props) {
 
   return (
     // Container
-    <div className="absolute flex flex-col pl-8 sm:bg-black border-l-[1px] sm:w-64 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min">
-      {/* Back Button for mobile */}
-      <button className="items-center w-full gap-3 pb-4 mt-3 text-left text-slate-100 ">
-        <HiOutlineChevronDoubleLeft className="inline mr-2 " />
-        Back
-      </button>
+    <div className="absolute   flex  ml-8 flex-col pl-8 sm:bg-black border-l-[1px] top-0 sm:z-20 sm:top-0   h-min">
       {/* Profile pic with gradient overlay */}
+
       <div className="">
         <div className="absolute w-48 rounded-lg opacity-60 h-52 h-fill bg-gradient-to-br from-black via-transparent to-transparent"></div>
+
         <img
           className="object-cover object-top w-48 bg-black rounded-lg max-h-60"
           src={props.astronaut.results[0].profile_image}
           alt="astonaut profile picture"
         />
       </div>
+
       {/* Details section */}
-      <div className="w-48">
+      <div className="w-full">
         {/* Name and flag */}
         <h1 className="w-48 py-3 text-lg font-light text-slate-100">
           {props.name}
@@ -61,6 +58,7 @@ function Details(props) {
         {props.astronaut.results[0].bio}
       </p>
       {/* Wiki link */}
+
       {props.astronaut.results[0].wiki ? (
         <button className="border-[1px] self-end mt-5 z-50 cursor-pointer  items-center flex text-xs py-1 px-4 text-white border-white rounded-full group-hover:animate-pulse">
           <Link

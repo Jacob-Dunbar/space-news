@@ -26,10 +26,10 @@ export default function Model({ ...props }) {
     if (isMobile) {
       return [-0.2, 0, 0];
     } else {
-      return [-3.8, 0, 0];
+      return [0, 0, 0];
     }
   }
- 
+
   // Slow rotate animation
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() * 0.1;

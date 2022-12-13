@@ -3,13 +3,14 @@ import {
   HiOutlineChevronDoubleRight,
   HiOutlineChevronDoubleLeft,
 } from "react-icons/hi";
+import { BsArrowRight } from "react-icons/bs";
 
 function DetailsReject(props) {
   return (
     // container
-    <div className="absolute top-0 flex flex-col pl-8 sm:bg-black border-l-[1px]  sm:h-full sm:w-64 mt-14 sm:z-20 sm:top-0 -right-64 sm:-right-12 h-min">
+    <div className="absolute top-0 flex flex-col ml-8 pl-8  sm:bg-black border-l-[1px]  sm:h-full sm:w-64  sm:z-20    h-min">
       {/* Back button for mobile */}
-      <button className="flex items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
+      <button className="items-center hidden w-full gap-3 pb-4 mt-3 text-left text-slate-100 sm:inline">
         <HiOutlineChevronDoubleLeft className="inline mr-2 " />
         Back
       </button>
@@ -26,14 +27,15 @@ function DetailsReject(props) {
           </p>
         </div>
         {/* Wiki link */}
-        <Link
-          className="flex items-center gap-3 mt-3 text-left sm:justify-self-end text-slate-100 group hover:text-orange-400"
-          target="_blank"
-          href={`https://en.wikipedia.org/wiki/${props.name}`}
-        >
-          Try Wikipedia
-          <HiOutlineChevronDoubleRight className=" group-hover:animate-bounceLeft" />
-        </Link>
+        <button className="border-[1px] ml-auto self-end mt-5 z-50 cursor-pointer  items-center flex text-xs py-1 px-4 text-white border-white rounded-full group-hover:animate-pulse">
+          <Link
+            target="_blank"
+            href={`https://en.wikipedia.org/wiki/${props.name}`}
+          >
+            Try Wikipedia
+          </Link>
+          <BsArrowRight className="ml-2 -mr-1" />
+        </button>
       </div>
       {/* spacer */}
       <div className="h-7 "></div>

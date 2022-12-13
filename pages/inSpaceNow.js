@@ -94,7 +94,7 @@ function InSpaceNow(props) {
   // Choose model to render Iss / Tiangong / Generic craft
   function choseModel() {
     if (currentCraft === "iss") {
-      return <Iss />;
+      return <Iss className="" />;
     } else if (currentCraft === "tiangong") {
       return <Tiangong />;
     } else if (currentCraft === "") {
@@ -105,39 +105,45 @@ function InSpaceNow(props) {
   }
 
   return (
-    <div className="z-50 flex justify-end gap-6 pt-8 sm:flex-col sm:justify-start sm:items-center grow">
+    <div className="z-50 min-h-[92vh] flex justify-end w-full  px-10 sm:flex-col sm:justify-start sm:items-center ">
       <Head>
         <title>Space News | In Space Now</title>
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       {/* Craft model background */}
-      <div className="absolute w-full sm:opacity-20 h-5/6">
-        <Canvas>
-          <Suspense fallback={null}>
-            <pointLight
-              distance={20}
-              decay={2}
-              intensity={4}
-              color={"white"}
-              position={[0, 0, 1]}
-            />
-            {choseModel()}
-          </Suspense>
-        </Canvas>
+      <div className="w-1/2 min-h-[93vh]  sm:opacity-20 ">
+        <div
+          className={` w-full h-full
+             transition-all duration-1000   ease-in-out  ${
+               currentCraft ? "opacity-100" : "  opacity-0"
+             }`}
+        >
+          <Canvas className="">
+            <Suspense fallback={null}>
+              <pointLight
+                distance={20}
+                decay={2}
+                intensity={4}
+                color={"white"}
+                position={[0, 0, 1]}
+              />
+              {choseModel()}
+            </Suspense>
+          </Canvas>
+        </div>
       </div>
+      <div className="w-1/2">
+        {/* Heading */}
 
-      {/* Heading */}
-      <h1 className="text-base tracking-wider sm:w-11/12 sm:pl-3 text-slate-300">
-        Currently manned craft in space:
-      </h1>
-      {/* Craft list*/}
-      <div className="w-7/12 h-full ">
-        <CraftList
-          craftsArray={craftsArray}
-          changeCurrentCraft={changeCurrentCraft}
-          currentCraft={currentCraft}
-        />
+        {/* Craft list*/}
+        <div className="w-full h-full py-12 mb-5 -mt-5 ">
+          <CraftList
+            craftsArray={craftsArray}
+            changeCurrentCraft={changeCurrentCraft}
+            currentCraft={currentCraft}
+          />
+        </div>
       </div>
     </div>
   );

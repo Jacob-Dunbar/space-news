@@ -23,11 +23,11 @@ function Craft(props) {
     <div
       onClick={() => props.changeCurrentCraft(props.craftName)}
       onBlur={handleBlur}
-      className="relative flex flex-col pt-2 pl-6 border-l w-max"
+      className="flex flex-col pr-2 mt-1 pl-7 "
     >
       {/* Craft list item */}
       <button
-        className={`mb-3 text-4xl text-left capitalize w-44 font-extralight text-slate-100 ${
+        className={`mb-3  text-3xl text-left capitalize  font-extralight  ${
           props.currentCraft === props.craftName
             ? "text-orange-400"
             : "text-slate-200"
@@ -37,7 +37,9 @@ function Craft(props) {
       </button>
       {/* Astonaut list */}
       {props.currentCraft === props.craftName ? (
-        <div>{astronautElements}</div>
+        <div className="absolute left-0 w-full h-full top-32">
+          {astronautElements}
+        </div>
       ) : undefined}
     </div>
   );

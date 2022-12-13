@@ -32,7 +32,7 @@ function feed({ pageNumber, articles }) {
   ));
 
   return (
-    <div className="relative flex flex-col items-center justify-between w-full h-full gap-8 pt-8 ">
+    <div className="relative flex flex-col items-center justify-between w-full min-h-[93vh] gap-8 pt-8 ">
       <Head>
         <title>Space News | Feed</title>
         <meta name="Space News" content="Latest space news and information" />

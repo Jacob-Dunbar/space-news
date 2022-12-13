@@ -42,10 +42,6 @@
   top: 0px;
   width: 100%;
 
-  opacity: 0;
-  transition: all 500ms ease;
-}
-
-.grad:hover {
   opacity: 1;
+  transition: all 500ms ease;
 }
