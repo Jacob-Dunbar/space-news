@@ -43,31 +43,33 @@ function article({ articles }) {
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      {/* Article title */}
-      <h1 className="text-2xl text-center text-slate-300">
-        {articles[0].title}
-      </h1>
-      {/* details section with date, author and source */}
-      <div className="flex ">
-        <h2 className="px-2 text-slate-300">{date}</h2>
-        <h2 className="px-2 border-x text-slate-300">
-          {articles[0].authorsByline}
-        </h2>
-        {/* Link to source website */}
-        <Link
-          target="_blank"
-          href={articles[0].url}
-          className="px-2 text-orange-400 sm:opacity-90 opacity-60 hover:opacity-90 text-slate-300"
-        >
-          {articles[0].source.domain}
-        </Link>
+      <div className="flex flex-col items-center mb-5 px-6 py-2  bg-gradient-to-bl from-black/10 to-white/10 w-[750px] border-2 border-gray-900 bg-opacity-5 backdrop-blur-sm rounded-xl">
+        {/* Article title */}
+        <h1 className="my-5 text-2xl text-center text-slate-300">
+          {articles[0].title}
+        </h1>
+        {/* details section with date, author and source */}
+        <div className="flex mb-5 ">
+          <h2 className="px-2 text-slate-300">{date}</h2>
+          <h2 className="px-2 border-x text-slate-300">
+            {articles[0].authorsByline}
+          </h2>
+          {/* Link to source website */}
+          <Link
+            target="_blank"
+            href={articles[0].url}
+            className="px-2 text-orange-400 sm:opacity-90 opacity-60 hover:opacity-90 "
+          >
+            {articles[0].source.domain}
+          </Link>
+        </div>
+        {/* Image */}
+        <img className="w-3/4 mb-10 " src={articles[0].imageUrl} />
+        {/* Article content */}
+        <p className="w-full px-5 mb-10 leading-7 tracking-wide text-slate-300 indent-8">
+          {articles[0].content}
+        </p>
       </div>
-      {/* Image */}
-      <img className="w-1/2 sm:w-3/4 " src={articles[0].imageUrl} />
-      {/* Article content */}
-      <p className="w-3/4 mb-10 leading-7 tracking-wide text-slate-300 indent-8">
-        {articles[0].content}
-      </p>
     </div>
   );
 }
