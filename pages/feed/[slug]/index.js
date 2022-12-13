@@ -32,7 +32,7 @@ function feed({ pageNumber, articles }) {
   ));
 
   return (
-    <div className="relative flex flex-col items-center justify-between w-full min-h-[93vh] gap-8 pt-8 ">
+    <div className="relative flex flex-col items-center justify-between w-full min-h-[93vh]  pt-4 ">
       <Head>
         <title>Space News | Feed</title>
         <meta name="Space News" content="Latest space news and information" />
@@ -40,12 +40,13 @@ function feed({ pageNumber, articles }) {
       </Head>
       {/* heading */}
       <div>
-        <h1 className="w-1/2 mt-4 mb-8 font-sans text-lg font-thin tracking-widest sm:pl-3 sm:w-11/12 text-slate-200">
-          Top stories from around the web:
-        </h1>
-
         {/* News elements list */}
-        <div> {newsElements}</div>
+        <div className="px-6 py-2 bg-black border-2 border-gray-900 bg-opacity-5 backdrop-blur-sm rounded-xl">
+          <h1 className="w-1/2 mt-4 mb-6 font-sans text-lg font-thin tracking-widest sm:pl-3 sm:w-11/12 text-slate-200">
+            Top stories from around the web:
+          </h1>
+          {newsElements}
+        </div>
       </div>
       {/* Paginator */}
       <div className="z-50 flex items-center gap-10 mt-auto mb-4 ">
