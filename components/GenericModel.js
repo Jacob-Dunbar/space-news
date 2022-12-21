@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model(props) {
@@ -25,7 +25,7 @@ export default function Model(props) {
     if (isMobile) {
       return [-0.2, 0, 0];
     } else {
-      return [0.5, -0.5, 0];
+      return [-0.4, 0.2, 0];
     }
   }
 
@@ -44,6 +44,7 @@ export default function Model(props) {
       {...props}
       dispose={null}
     >
+      <OrbitControls />
       <group scale={[1.9, 1.9, 1.9]} rotation={[-1, -0.2, 0]}>
         <group ref={Mod} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <group scale={5.3}>
