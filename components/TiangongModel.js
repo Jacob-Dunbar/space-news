@@ -40,6 +40,7 @@ export default function Model({ ...props }) {
 
   return (
     <group ref={group} {...props} dispose={null}>
+      <OrbitControls/>
       <group
         scale={[0.07, 0.07, 0.07]}
         rotation={[1.7, 8.8, 0]}

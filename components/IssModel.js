@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model({ ...props }) {
@@ -25,7 +25,7 @@ export default function Model({ ...props }) {
     if (isMobile) {
       return [0, 1, 0];
     } else {
-      return [0.2, 0, 0];
+      return [-0.2, 0.4, 0];
     }
   }
 
@@ -39,6 +39,7 @@ export default function Model({ ...props }) {
 
   return (
     <group ref={group} {...props} dispose={null}>
+      <OrbitControls />
       <group position={chosePosition()} rotation={[4, 0.8, 0.8]}>
         <group rotation={[8, 2, 2]}>
           <group
