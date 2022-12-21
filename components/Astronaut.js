@@ -73,7 +73,7 @@ function Astronaut(props) {
     } else if (isLoading) {
       return (
         <img
-          className="absolute w-12 top-20 right-40"
+          className="absolute w-12 top-20 right-28"
           src="/loading.gif"
           alt=""
         />
