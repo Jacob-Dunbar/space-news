@@ -6,21 +6,6 @@ import Tiangong from "../components/TiangongModel.js";
 import Generic from "../components/GenericModel.js";
 import Head from "next/head";
 
-// Get Whos in space data from API
-export const getServerSideProps = async () => {
-  const apiResponse = await fetch("http://api.open-notify.org/astros.json");
-
-  const apiJson = await apiResponse.json();
-
-  const { people } = apiJson;
-
-  return {
-    props: {
-      people,
-    },
-  };
-};
-
 function InSpaceNow(props) {
   // State to decide which craft is currently selected
   const [currentCraft, setCurrentCraft] = useState("");
@@ -86,6 +71,11 @@ function InSpaceNow(props) {
   // Crafts array
   const craftsArray = generateCrafts(props.people);
 
+  // set current craft to first craft
+  useEffect(() => {
+    setCurrentCraft(craftsArray[0].craft);
+  }, []);
+
   // Change current craft function
   function changeCurrentCraft(newCraft) {
     setCurrentCraft(newCraft);
@@ -105,14 +95,14 @@ function InSpaceNow(props) {
   }
 
   return (
-    <div className="z-50 min-h-[92vh]  flex justify-end w-full sm:w-screen sm:px-0  px-10 sm:flex-col sm:justify-start sm:items-center ">
+    <div className="z-50 min-h-[92vh] flex-row-reverse  flex justify-end w-full sm:w-screen sm:px-0  px-10 sm:flex-col sm:justify-start sm:items-center ">
       <Head>
         <title>Space News | In Space Now</title>
         <meta name="Space News" content="Latest space news and information" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       {/* Craft model background */}
-      <div className="w-1/2 sm:w-full min-h-[93vh] sm:absolute sm:opacity-20 ">
+      <div className="w-1/2  sm:w-full min-h-[93vh] sm:absolute sm:opacity-20 ">
         <div
           className={` w-full h-full
              transition-all sm:hidden duration-1000   ease-in-out  ${
@@ -127,6 +117,20 @@ function InSpaceNow(props) {
                 intensity={4}
                 color={"white"}
                 position={[0, 0, 1]}
+              />
+              <pointLight
+                distance={20}
+                decay={2}
+                intensity={1}
+                color={"white"}
+                position={[0, 0, -2]}
+              />
+              <pointLight
+                distance={20}
+                decay={2}
+                intensity={0.5}
+                color={"white"}
+                position={[-2, -1, 1]}
               />
               {choseModel()}
             </Suspense>
@@ -150,3 +154,18 @@ function InSpaceNow(props) {
 }
 
 export default InSpaceNow;
+
+// Get Whos in space data from API
+export const getServerSideProps = async () => {
+  const apiResponse = await fetch("http://api.open-notify.org/astros.json");
+
+  const apiJson = await apiResponse.json();
+
+  const { people } = apiJson;
+
+  return {
+    props: {
+      people,
+    },
+  };
+};

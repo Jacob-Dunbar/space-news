@@ -16,6 +16,12 @@ function Astronaut(props) {
   // Show/hide details
   const [showDetails, setShowDetails] = useState(false);
 
+  useEffect(() => {
+    if (props.index === 0) {
+      setShowDetails(true);
+    }
+  }, []);
+
   // Fetch data for all astonauts on craft
   useEffect(() => {
     setLoading(true);
@@ -111,15 +117,28 @@ function Astronaut(props) {
       <div className="block sm:hidden">{renderDetailsDesk()}</div>
       <div>
         {/* Astonaut list item*/}
-        <button
-          ref={btnRef}
-          onClick={handleClick}
-          onBlur={handleBlur}
-          className="flex items-center justify-between py-3 font-light text-left outline-none group focus:text-orange-400 w-44 text-slate-100"
-        >
-          {props.astronaut}
-          <HiOutlineChevronRight className="sm:group-focus:hidden text-slate-100 group-focus:animate-bounceLeft group-focus:text-orange-400" />
-        </button>
+        {props.index === 0 ? (
+          <button
+            autoFocus
+            ref={btnRef}
+            onClick={handleClick}
+            onBlur={handleBlur}
+            className="flex items-center justify-between py-3 font-light text-left outline-none group focus:text-orange-400 w-44 text-slate-100"
+          >
+            {props.astronaut}
+            <HiOutlineChevronRight className="sm:group-focus:hidden text-slate-100 group-focus:animate-bounceLeft group-focus:text-orange-400" />
+          </button>
+        ) : (
+          <button
+            ref={btnRef}
+            onClick={handleClick}
+            onBlur={handleBlur}
+            className="flex items-center justify-between py-3 font-light text-left outline-none group focus:text-orange-400 w-44 text-slate-100"
+          >
+            {props.astronaut}
+            <HiOutlineChevronRight className="sm:group-focus:hidden text-slate-100 group-focus:animate-bounceLeft group-focus:text-orange-400" />
+          </button>
+        )}
       </div>
     </div>
   );

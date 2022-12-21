@@ -7,7 +7,7 @@ function Craft(props) {
 
   // Generate astonaut list from craft object
   const astronautElements = props.peopleOnBoard.map((name, index) => {
-    return <Astronaut key={index} astronaut={name} />;
+    return <Astronaut key={index} index={index} astronaut={name} />;
   });
 
   // Handle blur to keep list open if de-focus happen within list
